@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/feedback.css">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">University Portal</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="about-us.html" class="nav-link">About</a></li>
+                    <li><a href="FAQ.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge"></span>
+                </button>
+                <span class="nav-divider"></span>
+                <a href="login.html" class="login-link">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+                <a href="student-profile.html" class="user-avatar-btn" aria-label="User Profile">
+                    <span class="material-symbols-outlined">person</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="feedback-main">
+
+        <!-- Hero / Banner Section -->
+        <section class="feedback-banner">
+            <span class="banner-badge">Portal Evaluation</span>
+            <h1>We Value Your <em>Feedback!</em></h1>
+            <p>Help us improve campus events and portal features by sharing your thoughts. Your insights shape our academic sanctuary.</p>
+        </section>
+
+        <!-- Grid Layout: Form & Sidebar -->
+        <section class="feedback-grid">
+
+            <!-- Left Column: Feedback Form -->
+            <div class="feedback-form-card">
+                <form action="#" method="POST" class="feedback-form">
+
+                    <div class="form-group">
+                        <label for="category">Feedback Category *</label>
+                        <div class="select-wrapper">
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Select a category...</option>
+                                <option value="campus_events">Campus Events</option>
+                                <option value="portal_features">Portal Features</option>
+                                <option value="bug_report">Bug Report</option>
+                                <option value="general">General Suggestion</option>
+                            </select>
+                            <span class="material-symbols-outlined select-arrow">expand_more</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event_feature">Select Event or Feature Name (Optional)</label>
+                        <input type="text" id="event_feature" name="event_feature" placeholder="e.g., Spring Symposium 2024">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Overall Rating *</label>
+                        <div class="star-rating-container">
+                            <input type="radio" id="star5" name="rating" value="5" required />
+                            <label for="star5" class="material-symbols-outlined">star</label>
+                            
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label for="star4" class="material-symbols-outlined">star</label>
+
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label for="star3" class="material-symbols-outlined">star</label>
+
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label for="star2" class="material-symbols-outlined">star</label>
+
+                            <input type="radio" id="star1" name="rating" value="1" />
+                            <label for="star1" class="material-symbols-outlined">star</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Detailed Feedback / Comments *</label>
+                        <textarea id="comments" name="comments" rows="5" placeholder="Please share your detailed thoughts and recommendations..." required></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="anonymous">
+                            <span>Submit feedback anonymously</span>
+                        </label>
+                    </div>
+
+                    <div class="feedback-actions">
+                        <button type="submit" class="btn-feedback btn-primary">Submit Feedback</button>
+                        <button type="reset" class="btn-feedback btn-outline">Reset</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Right Column: Sidebar Content -->
+            <aside class="feedback-sidebar">
+
+                <!-- Sidebar Card 1: Recent Highlights / Reviews -->
+                <div class="sidebar-card">
+                    <div class="sidebar-card-header">
+                        <span class="material-symbols-outlined">chat</span>
+                        <h3>Recent Highlights</h3>
+                    </div>
+                    <div class="stars-display">
+                        <span class="material-symbols-outlined star-filled">star</span>
+                        <span class="material-symbols-outlined star-filled">star</span>
+                        <span class="material-symbols-outlined star-filled">star</span>
+                        <span class="material-symbols-outlined star-filled">star</span>
+                        <span class="material-symbols-outlined star-filled">star</span>
+                    </div>
+                    <blockquote class="highlight-quote">
+                        "The new library booking system is a vast improvement. Much easier to secure a quiet study room during exam weeks."
+                    </blockquote>
+                    <p class="quote-author">— Graduate Student, CSE</p>
+                </div>
+
+                <!-- Sidebar Card 2: Review Process Info -->
+                <div class="sidebar-card">
+                    <div class="sidebar-card-header">
+                        <span class="material-symbols-outlined">info</span>
+                        <h3>Review Process</h3>
+                    </div>
+                    <p class="sidebar-text">
+                        All submissions are reviewed weekly by the Student Affairs committee. While we cannot respond to every submission individually, your input directly influences future updates to the StudentHub portal.
+                    </p>
+                    <a href="about-us.html" class="sidebar-policy-link">
+                        Read our community mission
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <span class="footer-brand">StudentHub</span>
+                    <p class="footer-brand-desc">The central campus hub for student events, departmental notices, academic schedules, and peer engagement.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>CHARUSAT Campus, Changa - 388421</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="events.html">Campus Events</a></li>
+                        <li><a href="about-us.html">About Portal</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Student Portal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="student-dashboard.html">Dashboard</a></li>
+                        <li><a href="student-profile.html">Student Profile</a></li>
+                        <li><a href="feed-back.html">Feedback Form</a></li>
+                        <li><a href="login.html">Student Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support & Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="contact.html">Help Desk</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Campus Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 StudentHub. All academic rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

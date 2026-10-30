@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="hW5mjx6yLm-dgXiTxUXY">
+    <mxGraphModel dx="1030" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="frame" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=1;childLayout=0;collapsible=0;fontStyle=1;fontSize=14;" value="StudentHub - Portal &amp;amp; Event Feedback&amp;nbsp;" vertex="1">
+          <mxGeometry height="980" width="760" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;" value="&lt;HEADER&gt; / &lt;NAV&gt;" vertex="1">
+          <mxGeometry height="60" width="720" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="logo" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="[ Logo ] StudentHub" vertex="1">
+          <mxGeometry height="36" width="160" x="35" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_links" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;" value="Home | Events | Dashboard | Profile | Feedback (Active)" vertex="1">
+          <mxGeometry height="30" width="340" x="210" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="auth_btns" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;" value="[ Profile Pic ]&amp;nbsp; [ Logout ]" vertex="1">
+          <mxGeometry height="30" width="180" x="540" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="main_tag" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontColor=#b85450;fontStyle=1;" value="&lt;MAIN&gt;" vertex="1">
+          <mxGeometry height="740" width="720" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="banner_sec" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontColor=#5b3a6e;" value="&lt;SECTION: Feedback Header Banner&gt;" vertex="1">
+          <mxGeometry height="80" width="690" x="35" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="banner_title" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" value="We Value Your Feedback!" vertex="1">
+          <mxGeometry height="25" width="490" x="135" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="banner_sub" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#555555;" value="Help us improve campus events and portal features by sharing your thoughts." vertex="1">
+          <mxGeometry height="20" width="540" x="110" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="form_sec" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" value="&lt;SECTION: Feedback Form&gt;" vertex="1">
+          <mxGeometry height="605" width="440" x="35" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="form_tag" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontColor=#b85450;fontStyle=1;" value="&lt;FORM&gt;" vertex="1">
+          <mxGeometry height="555" width="410" x="50" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_category" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=11;" value="&lt;LABEL&gt; Feedback Category *" vertex="1">
+          <mxGeometry height="20" width="370" x="70" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="input_category" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;" value="" vertex="1">
+          <mxGeometry height="35" width="370" x="70" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_item" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=11;" value="&lt;LABEL&gt; Select Event or Feature Name (Optional)" vertex="1">
+          <mxGeometry height="20" width="370" x="70" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="input_item" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=left;spacingLeft=10;" value="" vertex="1">
+          <mxGeometry height="35" width="370" x="70" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_rating" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=11;" value="&lt;LABEL&gt; Overall Rating *" vertex="1">
+          <mxGeometry height="20" width="370" x="70" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="rating_stars" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;fontStyle=1;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="40" width="370" x="70" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_comments" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=11;" value="&lt;LABEL&gt; Detailed Feedback / Comments *" vertex="1">
+          <mxGeometry height="20" width="370" x="70" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="input_comments" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;fontColor=#888888;" value="" vertex="1">
+          <mxGeometry height="110" width="370" x="70" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="chk_anon" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=11;" value="[&amp;nbsp; ] Submit feedback anonymously" vertex="1">
+          <mxGeometry height="25" width="370" x="70" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_submit_fb" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;" value="&lt;BUTTON&gt; Submit Feedback" vertex="1">
+          <mxGeometry height="40" width="220" x="70" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_reset_fb" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=13;" value="&lt;BUTTON&gt; Reset" vertex="1">
+          <mxGeometry height="40" width="140" x="300" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="aside_feedback" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontColor=#5b3a6e;" value="&lt;ASIDE: Portal Ratings &amp; Reviews&gt;" vertex="1">
+          <mxGeometry height="605" width="235" x="490" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="score_card" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;verticalAlign=middle;fontStyle=1;fontSize=12;" value="Reviews" vertex="1">
+          <mxGeometry height="100" width="205" x="505" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="review1" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;align=center;spacingLeft=10;verticalAlign=top;spacingTop=10;fontSize=11;" value="Some important Info&amp;nbsp;" vertex="1">
+          <mxGeometry height="110" width="205" x="505" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="review2" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;fontSize=11;" value="" vertex="1">
+          <mxGeometry height="110" width="205" x="505" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;align=center;" value="&lt;FOOTER&gt;&#xa;© 2026 StudentHub Portal | Privacy Policy | Terms of Service | Contact Support" vertex="1">
+          <mxGeometry height="60" width="720" x="20" y="860" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

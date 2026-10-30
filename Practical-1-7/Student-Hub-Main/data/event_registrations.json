@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "registration_id": "EVT-REG-1001",
+        "event_id": 1,
+        "event_title": "AI Workshop",
+        "student_id": "STU-1001",
+        "fullname": "Alex Johnson",
+        "email": "alex.ce23@charusat.edu.in",
+        "department": "Computer Engineering",
+        "registration_date": "2026-09-30 14:20:00",
+        "status": "Confirmed"
+    },
+    {
+        "id": 2,
+        "registration_id": "EVT-REG-1002",
+        "event_id": 3,
+        "event_title": "Full-Stack Web Development Workshop",
+        "student_id": "STU-1002",
+        "fullname": "Priya Patel",
+        "email": "priya.it23@charusat.edu.in",
+        "department": "Information Technology",
+        "registration_date": "2026-10-01 09:45:00",
+        "status": "Confirmed"
+    },
+    {
+        "id": 3,
+        "registration_id": "EVT-REG-1003",
+        "event_id": 5,
+        "event_title": "Inter-College Hackathon 2026",
+        "student_id": "STU-1003",
+        "fullname": "abc",
+        "email": "abc123@gmail.com",
+        "department": "Information Technology",
+        "registration_date": "2026-10-04 19:11:16",
+        "status": "Confirmed"
+    }
+]

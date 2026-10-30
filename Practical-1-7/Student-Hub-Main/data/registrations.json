@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "student_id": "STU-1001",
+        "fullname": "Alex Johnson",
+        "email": "alex.ce23@charusat.edu.in",
+        "phone": "9876543210",
+        "department": "Computer Engineering",
+        "year": "3rd Year",
+        "gender": "Male",
+        "registered_at": "2026-09-28 10:15:00"
+    },
+    {
+        "id": 2,
+        "student_id": "STU-1002",
+        "fullname": "Priya Patel",
+        "email": "priya.it23@charusat.edu.in",
+        "phone": "9876543211",
+        "department": "Information Technology",
+        "year": "3rd Year",
+        "gender": "Female",
+        "registered_at": "2026-09-29 11:30:00"
+    },
+    {
+        "id": 3,
+        "student_id": "STU-1003",
+        "fullname": "abc",
+        "email": "abc123@gmail.com",
+        "phone": "9874563213",
+        "department": "Information Technology",
+        "year": "4th Year",
+        "gender": "Male",
+        "registered_at": "2026-10-04 19:09:02"
+    },
+    {
+        "id": 4,
+        "student_id": "STU-1004",
+        "fullname": "om bhoi",
+        "email": "ombhoi812@gmail.com",
+        "phone": "9662540148",
+        "department": "Computer Engineering",
+        "year": "2nd Year",
+        "gender": "Male",
+        "registered_at": "2026-10-05 12:12:29"
+    }
+]

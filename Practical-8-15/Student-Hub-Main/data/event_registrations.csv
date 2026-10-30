@@ -1,0 +1,4 @@
+id,registration_id,event_id,event_title,student_id,fullname,email,department,registration_date,status
+1,EVT-REG-1001,1,"AI Workshop",STU-1001,"Alex Johnson",alex.ce23@charusat.edu.in,"Computer Engineering","2026-09-30 14:20:00",Confirmed
+2,EVT-REG-1002,3,"Full-Stack Web Development Workshop",STU-1002,"Priya Patel",priya.it23@charusat.edu.in,"Information Technology","2026-10-01 09:45:00",Confirmed
+3,EVT-REG-1003,5,"Inter-College Hackathon 2026",STU-1003,abc,abc123@gmail.com,"Information Technology","2026-10-04 19:11:16",Confirmed

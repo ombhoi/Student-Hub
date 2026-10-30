@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Register Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/register.css?v=2.0">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">University Portal</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="about-us.html" class="nav-link">About</a></li>
+                    <li><a href="FAQ.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge"></span>
+                </button>
+                <span class="nav-divider"></span>
+                <a href="login.html" class="login-link">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+                <a href="student-profile.html" class="user-avatar-btn" aria-label="User Profile">
+                    <span class="material-symbols-outlined">person</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Registration Container (Split Screen Layout) -->
+    <main class="register-wrapper">
+        <div class="auth-split-card">
+            
+            <!-- Left Side Visual Hero Banner -->
+            <aside class="auth-side-banner" aria-label="Academic Visual Banner">
+                <div class="banner-overlay"></div>
+                <div class="banner-content">
+                    <div class="banner-header">
+                        <div class="banner-badge">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <span>CHARUSAT Campus Network</span>
+                        </div>
+                        <h2 class="banner-title">Join the Academic <em>Sanctuary.</em></h2>
+                        <p class="banner-subtitle">Begin your academic journey with a personalized space designed for scholarly focus, community collaboration, and seamless campus workflow.</p>
+                    </div>
+
+                    <div class="banner-features">
+                        <div class="banner-feature-pill">
+                            <div class="feature-pill-icon">
+                                <span class="material-symbols-outlined">event_available</span>
+                            </div>
+                            <span class="feature-pill-text">Instant Event RSVP &amp; Symposium Passes</span>
+                        </div>
+                        <div class="banner-feature-pill">
+                            <div class="feature-pill-icon">
+                                <span class="material-symbols-outlined">schedule</span>
+                            </div>
+                            <span class="feature-pill-text">Synchronized Timetables &amp; Alerts</span>
+                        </div>
+                        <div class="banner-feature-pill">
+                            <div class="feature-pill-icon">
+                                <span class="material-symbols-outlined">groups</span>
+                            </div>
+                            <span class="feature-pill-text">Faculty Peer Circles &amp; Mentor Boards</span>
+                        </div>
+                    </div>
+
+                    <div class="banner-quote-card">
+                        <p class="quote-text">&ldquo;StudentHub is the heartbeat of our campus daily workflow &mdash; connecting student aspirations with academic excellence.&rdquo;</p>
+                        <span class="quote-author">&bull; Academic Affairs Council, 2026</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Side Registration Form Card -->
+            <section class="register-card">
+                <!-- Minimal Corner Mode Switcher (Practical 7 vs Practical 8) -->
+                <div class="corner-mode-toggle" id="corner-mode-toggle" title="Switch storage mode">
+                    <label class="corner-radio-pill active" id="mode-file-label">
+                        <input type="radio" name="storage_mode" value="file" checked>
+                        <span>JSON/CSV</span>
+                    </label>
+                    <label class="corner-radio-pill" id="mode-db-label">
+                        <input type="radio" name="storage_mode" value="db">
+                        <span>DB</span>
+                    </label>
+                </div>
+
+                <div class="register-header">
+                    <span class="register-header-tag">Account Setup</span>
+                    <h1>Create Your <em>StudentHub</em> Account</h1>
+                    <p>Enter your academic credentials below to set up your account and access campus events.</p>
+                </div>
+
+                <form action="../php/process_registration_file.php" method="POST" class="auth-form" id="register-form" novalidate>
+                    
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="fullname">Full Name *</label>
+                        <div class="input-with-icon">
+                            <span class="material-symbols-outlined">person</span>
+                            <input type="text" id="fullname" name="fullname" placeholder="e.g., Alex Johnson" required autocomplete="name">
+                        </div>
+                        <span class="error-msg" id="error-fullname" role="alert"></span>
+                    </div>
+
+                    <!-- Academic Email & Phone Row -->
+                    <div class="form-row">
+                        <!-- Academic Email -->
+                        <div class="form-group">
+                            <label for="email">Academic Email ID *</label>
+                            <div class="input-with-icon">
+                                <span class="material-symbols-outlined">mail</span>
+                                <input type="email" id="email" name="email" placeholder="alex.ce23@charusat.edu.in" required autocomplete="email">
+                            </div>
+                            <span class="error-msg" id="error-email" role="alert"></span>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="form-group">
+                            <label for="phone">Mobile Number *</label>
+                            <div class="input-with-icon">
+                                <span class="material-symbols-outlined">call</span>
+                                <input type="tel" id="phone" name="phone" placeholder="e.g., 9876543210" maxlength="10" required autocomplete="tel">
+                            </div>
+                            <span class="error-msg" id="error-phone" role="alert"></span>
+                        </div>
+                    </div>
+
+                    <!-- Course / Department & Academic Year Row -->
+                    <div class="form-row">
+                        <!-- Department -->
+                        <div class="form-group">
+                            <label for="department">Course / Department *</label>
+                            <div class="select-with-icon">
+                                <span class="material-symbols-outlined">school</span>
+                                <select id="department" name="department" required>
+                                    <option value="" disabled selected>Select Department</option>
+                                    <option value="Computer Engineering">Computer Engineering (CE)</option>
+                                    <option value="Information Technology">Information Technology (IT)</option>
+                                    <option value="AI & Data Science">AI &amp; Data Science (AIDS)</option>
+                                    <option value="Electronics & Communication">Electronics &amp; Communication (EC)</option>
+                                    <option value="Mechanical Engineering">Mechanical Engineering (ME)</option>
+                                    <option value="Civil Engineering">Civil Engineering (CL)</option>
+                                </select>
+                                <span class="material-symbols-outlined select-chevron">expand_more</span>
+                            </div>
+                            <span class="error-msg" id="error-department" role="alert"></span>
+                        </div>
+
+                        <!-- Academic Year Dropdown List -->
+                        <div class="form-group">
+                            <label for="year">Academic Year *</label>
+                            <div class="select-with-icon">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                                <select id="year" name="year" required>
+                                    <option value="" disabled>Select Year</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year" selected>3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                </select>
+                                <span class="material-symbols-outlined select-chevron">expand_more</span>
+                            </div>
+                            <span class="error-msg" id="error-year" role="alert"></span>
+                        </div>
+                    </div>
+
+                    <!-- Gender Radio Group -->
+                    <div class="form-group">
+                        <label>Gender *</label>
+                        <div class="radio-group-horizontal">
+                            <label class="radio-pill">
+                                <input type="radio" name="gender" value="Male" checked> Male
+                            </label>
+                            <label class="radio-pill">
+                                <input type="radio" name="gender" value="Female"> Female
+                            </label>
+                            <label class="radio-pill">
+                                <input type="radio" name="gender" value="Other"> Other
+                            </label>
+                        </div>
+                        <span class="error-msg" id="error-gender" role="alert"></span>
+                    </div>
+
+                    <!-- Create Password -->
+                    <div class="form-group">
+                        <label for="create-password">Create Password *</label>
+                        <div class="input-with-icon">
+                            <span class="material-symbols-outlined">lock</span>
+                            <input type="password" id="create-password" name="password" placeholder="••••••••" required autocomplete="new-password">
+                            <button type="button" class="btn-toggle-password" id="toggle-pw-1" aria-label="Toggle password visibility">
+                                <span class="material-symbols-outlined" id="toggle-icon-1">visibility_off</span>
+                            </button>
+                        </div>
+                        <span class="error-msg" id="error-password" role="alert"></span>
+
+                        <!-- Password Strength Meter & Checklist -->
+                        <div class="password-strength-box">
+                            <div class="strength-bar-track">
+                                <div class="strength-segment" id="strength-seg-1"></div>
+                                <div class="strength-segment" id="strength-seg-2"></div>
+                                <div class="strength-segment" id="strength-seg-3"></div>
+                                <div class="strength-segment" id="strength-seg-4"></div>
+                            </div>
+                            <div class="strength-text">
+                                <span>Password Strength: <strong class="strength-label" id="strength-label">None</strong></span>
+                                <span>Min. 8 characters</span>
+                            </div>
+                            <ul class="password-requirements">
+                                <li class="req-item" id="req-length">
+                                    <span class="material-symbols-outlined">radio_button_unchecked</span>
+                                    8+ characters
+                                </li>
+                                <li class="req-item" id="req-upper">
+                                    <span class="material-symbols-outlined">radio_button_unchecked</span>
+                                    Uppercase (A-Z)
+                                </li>
+                                <li class="req-item" id="req-lower">
+                                    <span class="material-symbols-outlined">radio_button_unchecked</span>
+                                    Lowercase (a-z)
+                                </li>
+                                <li class="req-item" id="req-number">
+                                    <span class="material-symbols-outlined">radio_button_unchecked</span>
+                                    Number (0-9)
+                                </li>
+                                <li class="req-item" id="req-special">
+                                    <span class="material-symbols-outlined">radio_button_unchecked</span>
+                                    Symbol (@$!%*?&)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password *</label>
+                        <div class="input-with-icon">
+                            <span class="material-symbols-outlined">lock_reset</span>
+                            <input type="password" id="confirm-password" name="confirm_password" placeholder="••••••••" required autocomplete="new-password">
+                            <button type="button" class="btn-toggle-password" id="toggle-pw-2" aria-label="Toggle password visibility">
+                                <span class="material-symbols-outlined" id="toggle-icon-2">visibility_off</span>
+                            </button>
+                        </div>
+                        <span class="error-msg" id="error-confirm-password" role="alert"></span>
+                    </div>
+
+                    <!-- Terms and Conditions Checkbox -->
+                    <div class="form-group terms-group">
+                        <label class="terms-label" for="terms-agree">
+                            <input type="checkbox" id="terms-agree" name="terms" required>
+                            <span>I accept the <a href="#">Terms &amp; Conditions</a> and agree to adhere to the university academic honor code.</span>
+                        </label>
+                        <span class="error-msg" id="error-terms" role="alert"></span>
+                    </div>
+
+                    <div class="form-actions-row">
+                        <button type="submit" class="btn-submit-register">
+                            <span>Register</span>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                        <button type="reset" class="btn-reset" id="btn-reset-form">
+                            <span>Reset</span>
+                        </button>
+                    </div>
+
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="login.html" class="auth-link">Login here</a></p>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <span class="footer-brand">StudentHub</span>
+                    <p class="footer-brand-desc">The central campus hub for student events, departmental notices, academic schedules, and peer engagement.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>CHARUSAT Campus, Changa - 388421</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="events.html">Campus Events</a></li>
+                        <li><a href="about-us.html">About Portal</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Student Portal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="student-dashboard.html">Dashboard</a></li>
+                        <li><a href="student-profile.html">Student Profile</a></li>
+                        <li><a href="feed-back.html">Feedback Form</a></li>
+                        <li><a href="login.html">Student Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support & Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="contact.html">Help Desk</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Campus Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 StudentHub. All academic rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/validation.js?v=2.1"></script>
+    <script>
+        // Password visibility toggles
+        function setupToggle(btnId, inputId, iconId) {
+            const btn = document.getElementById(btnId);
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (btn && input && icon) {
+                btn.addEventListener('click', () => {
+                    const isPassword = input.getAttribute('type') === 'password';
+                    input.setAttribute('type', isPassword ? 'text' : 'password');
+                    icon.textContent = isPassword ? 'visibility' : 'visibility_off';
+                });
+            }
+        }
+        setupToggle('toggle-pw-1', 'create-password', 'toggle-icon-1');
+        setupToggle('toggle-pw-2', 'confirm-password', 'toggle-icon-2');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - About Us</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/about.css">
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../js/auth_guard.js?v=5.0"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">University Portal</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about-us.html" class="nav-link active">About</a></li>
+                    <li><a href="FAQ.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge"></span>
+                </button>
+                <span class="nav-divider"></span>
+                <a href="login.html" class="login-link">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <h1>About <span class="serif-italic">StudentHub</span></h1>
+            <p>Empowering campus collaboration, scholarly communication, and academic growth in one unified digital ecosystem.</p>
+        </section>
+
+        <!-- Mission Statement -->
+        <section class="mission-section">
+            <div class="mission-card">
+                <span class="quote-mark">“</span>
+                <h2>StudentHub was created to bridge the gap between students, faculty, and campus activities.</h2>
+            </div>
+        </section>
+
+        <!-- Three Core Pillars -->
+        <section class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <span class="material-symbols-outlined">hub</span>
+                </div>
+                <h3>Centralized Hub</h3>
+                <p>Access all your essential campus resources, from course syllabi to university department directories, in one unified platform.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                </div>
+                <h3>Event Tracking</h3>
+                <p>Stay updated with the latest campus events, academic colloquia, hackathons, and union workshops effortlessly.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <span class="material-symbols-outlined">accessibility_new</span>
+                </div>
+                <h3>Accessibility First</h3>
+                <p>Designed with inclusion in mind, ensuring all scholars have seamless access to the academic tools they need to succeed.</p>
+            </div>
+        </section>
+
+        <!-- Lower Section (History & Community + Get Involved) -->
+        <section class="about-grid">
+            <div class="about-info-column">
+                <article class="info-card">
+                    <div class="info-icon">
+                        <span class="material-symbols-outlined">history_edu</span>
+                    </div>
+                    <div class="info-content">
+                        <h4>Our History</h4>
+                        <p>Founded by a group of dedicated researchers who recognized the need for a cohesive, intuitive academic sanctuary for university scholars.</p>
+                    </div>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <span class="material-symbols-outlined">groups</span>
+                    </div>
+                    <div class="info-content">
+                        <h4>The Community</h4>
+                        <p>A growing network of scholars, educators, and student cohorts committed to open academic communication and shared campus discovery.</p>
+                    </div>
+                </article>
+            </div>
+
+            <aside class="get-involved-card">
+                <h3>Get Involved</h3>
+                <p>We are always looking for passionate individuals to contribute to the StudentHub ecosystem. Whether you are a developer, a student mentor, or an event organizer, there is a place for you.</p>
+                <a href="contact.html" class="btn-contact">Contact Our Team</a>
+            </aside>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-title">
+                        <div class="brand-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <span>StudentHub</span>
+                    </div>
+                    <p class="footer-brand-desc">The centralized academic portal for university scholars, faculty collaboration, course registrations, and daily campus milestones.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>Main Quadrangle, Academic Hall East</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Academic</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Course Catalog</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="#">Library Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="FAQ.html">Help Center &amp; FAQ</a></li>
+                        <li><a href="feed-back.html">Submit Feedback</a></li>
+                        <li><a href="#">Health &amp; Wellness</a></li>
+                        <li><a href="contact.html">IT Service Desk</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Student Union</a></li>
+                        <li><a href="login.html?redirect=events.html" class="auth-event-link">Campus Events</a></li>
+                        <li><a href="#">Housing &amp; Dining</a></li>
+                        <li><a href="#">Career Center</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 StudentHub University Academic Portal. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

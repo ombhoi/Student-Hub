@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="U06HeY9nKHprL8UILpvS">
+    <mxGraphModel dx="1030" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="frame" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=1;childLayout=0;collapsible=0;fontStyle=1;fontSize=14;" value="StudentHub - About Us&amp;nbsp;" vertex="1">
+          <mxGeometry height="980" width="760" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;" value="&lt;HEADER&gt; / &lt;NAV&gt;" vertex="1">
+          <mxGeometry height="60" width="720" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="logo" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="[ Logo ] StudentHub" vertex="1">
+          <mxGeometry height="36" width="160" x="35" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_links" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;" value="Home | Events | Dashboard | About (Active) | FAQ | Contact" vertex="1">
+          <mxGeometry height="30" width="340" x="220" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="auth_btns" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;" value="[ Login ]  [ Register ]" vertex="1">
+          <mxGeometry height="30" width="150" x="570" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="main_tag" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontColor=#b85450;fontStyle=1;" value="&lt;MAIN&gt;" vertex="1">
+          <mxGeometry height="740" width="720" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="title_sec" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=left;spacingLeft=10;fontColor=#5b3a6e;fontStyle=1;" value="&lt;SECTION: Page Header&gt;" vertex="1">
+          <mxGeometry height="90" width="690" x="35" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="page_title" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" value="About StudentHub" vertex="1">
+          <mxGeometry height="30" width="490" x="135" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="page_sub" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" value="Empowering campus collaboration, communication, and academic growth." vertex="1">
+          <mxGeometry height="25" width="540" x="110" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="mission_sec" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" value="&lt;SECTION: Mission &amp; Purpose&gt;" vertex="1">
+          <mxGeometry height="150" width="690" x="35" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="mission_text" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;spacing=10;" value="&lt;br&gt;&lt;br&gt;StudentHub was created to bridge the gap between students, faculty, and campus activities" vertex="1">
+          <mxGeometry height="100" width="650" x="55" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="stats_sec" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" value="&lt;SECTION: Core Objectives&gt;" vertex="1">
+          <mxGeometry height="170" width="690" x="35" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="obj1" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="&lt;article&gt;&lt;br&gt;&lt;br&gt;Centralized Hub&lt;br&gt;&lt;br&gt;&lt;/article&gt;" vertex="1">
+          <mxGeometry height="120" width="195" x="55" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="obj2" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="&lt;article&gt;&lt;br&gt;&lt;br&gt;Event Tracking&lt;br&gt;&lt;br&gt;&lt;/article&gt;" vertex="1">
+          <mxGeometry height="120" width="195" x="282" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="obj3" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="&lt;article&gt;&lt;br&gt;&lt;br&gt;Accessibility First&lt;br&gt;&lt;br&gt;&lt;/article&gt;" vertex="1">
+          <mxGeometry height="120" width="195" x="510" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="team_sec" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" value="&lt;SECTION: Faculty &amp; Project Mentors&gt;" vertex="1">
+          <mxGeometry height="245" width="450" x="35" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="team_card1" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;" value="" vertex="1">
+          <mxGeometry height="90" width="410" x="55" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="team_card2" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;" value="" vertex="1">
+          <mxGeometry height="90" width="410" x="55" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="aside_about" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;spacingLeft=10;fontStyle=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Some Imporatant Info Show here.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="245" width="225" x="500" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;align=center;" value="&lt;FOOTER&gt;&#xa;© 2026 StudentHub Portal | Privacy Policy | Terms of Service | Contact Support" vertex="1">
+          <mxGeometry height="60" width="720" x="20" y="860" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

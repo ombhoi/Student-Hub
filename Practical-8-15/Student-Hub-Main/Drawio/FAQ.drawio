@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="4U0OstxS4rQlcitPiu7_">
+    <mxGraphModel dx="1030" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="frame" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=1;childLayout=0;collapsible=0;fontStyle=1;fontSize=14;" value="StudentHub - Frequently Asked Questions&amp;nbsp;" vertex="1">
+          <mxGeometry height="980" width="760" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;" value="&lt;HEADER&gt; / &lt;NAV&gt;" vertex="1">
+          <mxGeometry height="60" width="720" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="logo" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="[ Logo ] StudentHub" vertex="1">
+          <mxGeometry height="36" width="160" x="35" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_links" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;" value="Home | Events | Dashboard | Profile | FAQ (Active)" vertex="1">
+          <mxGeometry height="30" width="340" x="210" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="auth_btns" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;" value="[ Login ]  [ Register ]" vertex="1">
+          <mxGeometry height="30" width="160" x="560" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="main_tag" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontColor=#b85450;fontStyle=1;" value="&lt;MAIN&gt;" vertex="1">
+          <mxGeometry height="740" width="720" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="banner_sec" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontColor=#5b3a6e;" value="&lt;SECTION: FAQ Search Header&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="35" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="banner_title" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" value="How can we help you?" vertex="1">
+          <mxGeometry height="25" width="490" x="135" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="search_input" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;align=left;spacingLeft=10;fontColor=#888888;" value="" vertex="1">
+          <mxGeometry height="40" width="450" x="110" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_search" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="[ Search ]" vertex="1">
+          <mxGeometry height="40" width="80" x="570" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="categories_sec" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" value="&lt;SECTION: Filter Categories&gt;" vertex="1">
+          <mxGeometry height="60" width="690" x="35" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="cat1" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" value="[ All Questions ]" vertex="1">
+          <mxGeometry height="30" width="120" x="55" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="cat2" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=11;" value="[ ]" vertex="1">
+          <mxGeometry height="30" width="140" x="185" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="cat3" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=11;" value="[&amp;nbsp; ]" vertex="1">
+          <mxGeometry height="30" width="130" x="335" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="cat4" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=11;" value="[&amp;nbsp; ]" vertex="1">
+          <mxGeometry height="30" width="140" x="475" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="accordion_sec" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" value="&lt;SECTION: Accordion Questions List&gt;" vertex="1">
+          <mxGeometry height="420" width="690" x="35" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="faq1" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=15;verticalAlign=top;spacingTop=10;fontStyle=1;" value="&lt;br&gt;&lt;summary&gt; ➖ How do I register for campus events?&lt;br&gt;&lt;/summary&gt;" vertex="1">
+          <mxGeometry height="85" width="650" x="55" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="faq2" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=left;spacingLeft=15;fontStyle=1;" value="&lt;DETAILS: Closed&gt;&#xa;&lt;SUMMARY&gt; ➕ Can I cancel my registration for an event?" vertex="1">
+          <mxGeometry height="45" width="650" x="55" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="faq3" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=left;spacingLeft=15;fontStyle=1;" value="&lt;DETAILS: Closed&gt;&#xa;&lt;SUMMARY&gt; ➕ What should I do if I forget my login credentials?" vertex="1">
+          <mxGeometry height="45" width="650" x="55" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="faq4" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=left;spacingLeft=15;fontStyle=1;" value="&lt;DETAILS: Closed&gt;&#xa;&lt;SUMMARY&gt; ➕ How do I update my profile details and department information?" vertex="1">
+          <mxGeometry height="45" width="650" x="55" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="faq5" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=left;spacingLeft=15;fontStyle=1;" value="&lt;DETAILS: Closed&gt;&#xa;&lt;SUMMARY&gt; ➕ Who do I contact for administrative or technical support?" vertex="1">
+          <mxGeometry height="45" width="650" x="55" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="help_sec" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;fontStyle=1;" value="&lt;br&gt;Didn&#39;t find your answer?&amp;nbsp;&lt;br&gt;[ BUTTON: Go to Contact Page ]" vertex="1">
+          <mxGeometry height="80" width="690" x="35" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;align=center;" value="&lt;FOOTER&gt;&#xa;© 2026 StudentHub Portal | Privacy Policy | Terms of Service | Contact Support" vertex="1">
+          <mxGeometry height="60" width="720" x="20" y="860" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

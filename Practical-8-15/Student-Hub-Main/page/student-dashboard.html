@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Student Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <style id="auth-strict-guard">html, body { display: none !important; }</style>
+    <script>
+        document.documentElement.style.visibility = 'hidden';
+    </script>
+    <script src="../js/auth_guard.js?v=5.0"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">University Portal</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="student-dashboard.html" class="nav-link active">Dashboard</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="about-us.html" class="nav-link">About</a></li>
+                    <li><a href="FAQ.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge"></span>
+                </button>
+                <span class="nav-divider"></span>
+                <a href="student-profile.html" class="user-info" title="View Student Profile">
+                    <span class="user-avatar-badge">ST</span>
+                    <span class="user-name">Student</span>
+                </a>
+                <a href="../php/logout.php" class="logout-link" title="Logout">
+                    <span class="material-symbols-outlined">logout</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content Area -->
+    <main class="dashboard-wrapper">
+        <div class="dashboard-container">
+
+            <!-- Sidebar Navigation -->
+            <aside class="dashboard-sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="student-dashboard.html" class="active">
+                                <span class="material-symbols-outlined">dashboard</span>
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="events.html">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <span>My Registered Events</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="material-symbols-outlined">event_note</span>
+                                <span>Academic Schedule</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="material-symbols-outlined">assignment_turned_in</span>
+                                <span>Submissions / Tasks</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="material-symbols-outlined">campaign</span>
+                                <span>Announcements</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="student-profile.html">
+                                <span class="material-symbols-outlined">settings</span>
+                                <span>Profile Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Dashboard Main Panel -->
+            <section class="dashboard-main-content">
+
+                <!-- Welcome Banner -->
+                <div class="dashboard-banner">
+                    <div class="banner-text">
+                        <h1>Welcome back, <em class="user-name">Alex Johnson</em> (<span class="student-code-badge">STU-001</span>)</h1>
+                        <p>Here is an overview of your upcoming events, academic tasks, and campus alerts. Stay focused and have an inspiring day.</p>
+                    </div>
+                    <div class="banner-watermark" aria-hidden="true">
+                        <span class="material-symbols-outlined">auto_stories</span>
+                    </div>
+                </div>
+
+                <!-- Stats Cards Grid -->
+                <div class="dashboard-stats-grid">
+                    <div class="stat-card stat-events">
+                        <div class="stat-icon-wrapper">
+                            <span class="material-symbols-outlined">calendar_month</span>
+                        </div>
+                        <h3>Registered Events</h3>
+                        <p class="stat-subtext">3 Upcoming</p>
+                    </div>
+
+                    <div class="stat-card stat-tasks">
+                        <div class="stat-icon-wrapper">
+                            <span class="material-symbols-outlined">error_outline</span>
+                        </div>
+                        <h3>Pending Tasks</h3>
+                        <p class="stat-subtext">2 Submissions Due</p>
+                    </div>
+
+                    <div class="stat-card stat-attendance">
+                        <div class="stat-icon-wrapper">
+                            <span class="material-symbols-outlined">person_check</span>
+                        </div>
+                        <h3>Attendance</h3>
+                        <p class="stat-subtext">92% Overall</p>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events Section -->
+                <div class="dashboard-card-section">
+                    <div class="section-header">
+                        <h2>Upcoming Events</h2>
+                        <a href="events.html" class="view-all-link">View All Events</a>
+                    </div>
+                    <div class="dashboard-list">
+                        <a href="events.html" class="dash-list-item">
+                            <div class="item-accent-bar bar-brown"></div>
+                            <div class="item-details">
+                                <h4>Annual Web Tech Hackathon</h4>
+                                <p>Main Campus Library • Tomorrow, 9:00 AM</p>
+                            </div>
+                            <span class="material-symbols-outlined item-arrow">chevron_right</span>
+                        </a>
+
+                        <a href="events.html" class="dash-list-item">
+                            <div class="item-accent-bar bar-grey"></div>
+                            <div class="item-details">
+                                <h4>Guest Lecture: Future of AI in Research</h4>
+                                <p>Auditorium B • Friday, 2:00 PM</p>
+                            </div>
+                            <span class="material-symbols-outlined item-arrow">chevron_right</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recent Announcements Section -->
+                <div class="dashboard-card-section">
+                    <div class="section-header">
+                        <h2>Recent Announcements</h2>
+                    </div>
+                    <div class="dashboard-announcements">
+                        <div class="announcement-box featured-alert">
+                            <div class="announcement-title">
+                                <span class="material-symbols-outlined icon-announcement">campaign</span>
+                                <h4>Library Hours Extended for Exams</h4>
+                            </div>
+                            <p>During the upcoming mid-term evaluation week, the central campus library will remain open 24/7 starting Monday.</p>
+                        </div>
+
+                        <div class="announcement-box standard-alert">
+                            <div class="announcement-title">
+                                <span class="material-symbols-outlined icon-info">info</span>
+                                <h4>Portal Maintenance Notice</h4>
+                            </div>
+                            <p>The student portal will undergo regular security maintenance this Sunday between 2:00 AM and 4:00 AM IST.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <span class="footer-brand">StudentHub</span>
+                    <p class="footer-brand-desc">The central campus hub for student events, departmental notices, academic schedules, and peer engagement.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>CHARUSAT Campus, Changa - 388421</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="events.html">Campus Events</a></li>
+                        <li><a href="about-us.html">About Portal</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Student Portal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="student-dashboard.html">Dashboard</a></li>
+                        <li><a href="student-profile.html">Student Profile</a></li>
+                        <li><a href="feed-back.html">Feedback Form</a></li>
+                        <li><a href="login.html">Student Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support & Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="contact.html">Help Desk</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Campus Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 StudentHub. All academic rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

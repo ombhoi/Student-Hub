@@ -1,0 +1,5 @@
+id,student_id,fullname,email,phone,department,year,gender,registered_at
+1,STU-1001,"Alex Johnson",alex.ce23@charusat.edu.in,9876543210,"Computer Engineering","3rd Year",Male,"2026-09-28 10:15:00"
+2,STU-1002,"Priya Patel",priya.it23@charusat.edu.in,9876543211,"Information Technology","3rd Year",Female,"2026-09-29 11:30:00"
+3,STU-1003,abc,abc123@gmail.com,9874563213,"Information Technology","4th Year",Male,"2026-10-04 19:09:02"
+4,STU-1004,"om bhoi",ombhoi812@gmail.com,9662540148,"Computer Engineering","2nd Year",Male,"2026-10-05 12:12:29"

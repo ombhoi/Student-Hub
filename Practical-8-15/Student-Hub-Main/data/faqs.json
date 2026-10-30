@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "category": "Registration",
+    "question": "How do I register for upcoming campus events on StudentHub?",
+    "answer": "Navigate to the 'Events' page in the top menu. Browse upcoming events or filter by category (Tech, Cultural, Academic, Sports). Click 'Register Now' on any card to secure your reservation with your student credentials.",
+    "tags": ["register", "events", "reservations"]
+  },
+  {
+    "id": 2,
+    "category": "Registration",
+    "question": "Can I cancel or modify my event registration after submitting?",
+    "answer": "Yes. Log in to your StudentHub dashboard, navigate to 'My Registrations', find the specific event card, and select 'Cancel Registration' at least 24 hours prior to the event schedule.",
+    "tags": ["cancel", "modify", "ticket"]
+  },
+  {
+    "id": 3,
+    "category": "Registration",
+    "question": "What is the difference between JSON/CSV file registration and Database registration?",
+    "answer": "StudentHub provides a dual-architecture implementation: Mode A (Practical 7) appends registrations to concurrent server files (registrations.json and registrations.csv), while Mode B (Practical 8) executes prepared statements directly into a normalized MySQL relational database.",
+    "tags": ["dual mode", "csv", "json", "database", "practical"]
+  },
+  {
+    "id": 4,
+    "category": "Registration",
+    "question": "Do I receive a confirmation ticket or code after registering?",
+    "answer": "Yes, every successful registration generates a unique alphanumeric ticket code (e.g., SH-2026-TECH-1011) that can be scanned at the auditorium entrance.",
+    "tags": ["ticket code", "confirmation", "qr"]
+  },
+  {
+    "id": 5,
+    "category": "Account & Profile",
+    "question": "How can I update my department, academic year, or phone number?",
+    "answer": "Access the 'Student Profile' page by clicking on your avatar at the top right of the navigation bar. Click 'Edit Profile', make your modifications, and save changes.",
+    "tags": ["profile", "department", "update"]
+  },
+  {
+    "id": 6,
+    "category": "Account & Profile",
+    "question": "What should I do if I forget my StudentHub account password?",
+    "answer": "On the Login page, click 'Forgot Password?'. Enter your registered academic email address, and a secure verification link will be dispatched to reset your credentials.",
+    "tags": ["password", "forgot", "reset"]
+  },
+  {
+    "id": 7,
+    "category": "Account & Profile",
+    "question": "Are multiple student accounts allowed with the same email?",
+    "answer": "No. StudentHub strictly enforces uniqueness on student academic email IDs both on frontend validation and through unique database indices.",
+    "tags": ["duplicate", "email", "unique"]
+  },
+  {
+    "id": 8,
+    "category": "Account & Profile",
+    "question": "How is my user interface theme preference (Light/Dark) saved?",
+    "answer": "Your theme preference is saved locally using HTML5 localStorage. Whenever you toggle between light and dark modes, StudentHub restores your preference automatically on all pages.",
+    "tags": ["theme", "dark mode", "localstorage"]
+  },
+  {
+    "id": 9,
+    "category": "Technical Support",
+    "question": "Does StudentHub support offline browsing if the internet disconnects?",
+    "answer": "Yes! In Practical 6, the event catalog implements localStorage caching. If your connection drops or the server is momentarily unreachable, previously fetched events load seamlessly from cache.",
+    "tags": ["offline", "cache", "fetch api"]
+  },
+  {
+    "id": 10,
+    "category": "Technical Support",
+    "question": "Why did my form submission fail due to a CAPTCHA error?",
+    "answer": "StudentHub employs an HTML5 Canvas security CAPTCHA to verify human participation. Ensure you enter the exact case-insensitive letters and numbers shown, or click 'Reload' for a fresh token.",
+    "tags": ["captcha", "security", "canvas"]
+  },
+  {
+    "id": 11,
+    "category": "Technical Support",
+    "question": "How can I view stored CSV and JSON submissions for evaluation?",
+    "answer": "Evaluators and instructors can visit the Practical 7 File Storage Records page (/php/view_file_records.php) to review raw JSON arrays, CSV tabular rows, and download the exported CSV file directly.",
+    "tags": ["proof of work", "csv viewer", "json viewer"]
+  },
+  {
+    "id": 12,
+    "category": "Technical Support",
+    "question": "How does StudentHub protect against SQL injection and XSS?",
+    "answer": "All server-side PHP scripts utilize PDO prepared statements with native parameter binding (disabling emulated prepares), along with htmlspecialchars() input sanitization and CSRF verification tokens.",
+    "tags": ["security", "pdo", "prepared statements", "xss"]
+  },
+  {
+    "id": 13,
+    "category": "Campus Facilities",
+    "question": "Where are the primary venues for campus hackathons and workshops?",
+    "answer": "Major events are hosted at the Tech Hub Auditorium, Main Library Hall B, Archives Dept Room 402, and the Computer Engineering Block Labs across CHARUSAT Campus.",
+    "tags": ["venues", "campus", "halls"]
+  },
+  {
+    "id": 14,
+    "category": "Campus Facilities",
+    "question": "Are attendance credits or digital participation certificates provided?",
+    "answer": "Yes. Attending verified StudentHub technical bootcamps, hackathons, and scholarly symposia earns digital activity points reflected on your academic co-curricular transcript.",
+    "tags": ["certificates", "credits", "points"]
+  },
+  {
+    "id": 15,
+    "category": "Campus Facilities",
+    "question": "How can student clubs propose a new workshop on the calendar?",
+    "answer": "Authorized club conveners and faculty advisors can submit event proposals through the Admin portal or by contacting the IT Service Desk via the Contact page.",
+    "tags": ["clubs", "propose", "faculty"]
+  },
+  {
+    "id": 16,
+    "category": "Campus Facilities",
+    "question": "What are the operating hours of the university IT Service Desk?",
+    "answer": "The campus IT Support Desk is open Monday through Saturday from 8:30 AM to 5:30 PM at Academic Hall East, or reachable anytime via the StudentHub Contact form.",
+    "tags": ["hours", "support desk", "help"]
+  }
+]

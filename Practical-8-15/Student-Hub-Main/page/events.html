@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Campus Events</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/events.css?v=8.0">
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <style id="auth-strict-guard">html, body { display: none !important; }</style>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script>
+        // Immediate sync protection: prevent rendering until authentication is confirmed
+        document.documentElement.style.visibility = 'hidden';
+    </script>
+    <script src="../js/auth_guard.js?v=8.0"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">University Portal</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="events.html" class="nav-link active">Events</a></li>
+                    <li><a href="about-us.html" class="nav-link">About</a></li>
+                    <li><a href="FAQ.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge"></span>
+                </button>
+                <span class="nav-divider"></span>
+                <a href="student-profile.html" class="user-info" title="View Student Profile">
+                    <span class="user-avatar-badge">ST</span>
+                    <span class="user-name">Student</span>
+                </a>
+                <a href="../php/logout.php" class="logout-link" title="Logout">
+                    <span class="material-symbols-outlined">logout</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Page Header -->
+        <section class="events-header-section">
+            <div class="events-title-row">
+                <div class="events-title-area">
+                    <h1>Campus Events <span class="serif-italic">&amp; Gatherings</span></h1>
+                    <p class="events-subtitle">Discover, bookmark, and register for upcoming symposia, hackathons,
+                        studio performances, and scholarly workshops across colleges.</p>
+                </div>
+                <div class="events-header-meta">
+                    <div class="reservations-badge">
+                        <div class="semester-title">
+                            <span class="material-symbols-outlined">calendar_today</span>
+                            <span>Fall Semester 2026</span>
+                        </div>
+                        <span class="reservations-count">16 Curated Campus Events</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Pills Navigation -->
+        <section class="category-pills-section">
+            <div class="pills-container">
+                <button type="button" class="category-pill active" data-cat="All Categories">
+                    <span class="material-symbols-outlined" style="font-size: 16px;">apps</span>
+                    All Events
+                </button>
+                <button type="button" class="category-pill" data-cat="Tech & Innovation">Tech &amp; Engineering</button>
+                <button type="button" class="category-pill" data-cat="Academic Seminars">Academic &amp;
+                    Research</button>
+                <button type="button" class="category-pill" data-cat="Arts & Culture">Cultural &amp; Arts</button>
+                <button type="button" class="category-pill" data-cat="Sports & Wellness">Sports &amp; Wellness</button>
+            </div>
+        </section>
+
+        <!-- Search & Filter Panel (Maintains existing DOM IDs for js/script.js) -->
+        <section class="search-filter-section">
+            <div class="filter-group search-group">
+                <label for="search" class="filter-label">
+                    <span class="material-symbols-outlined">search</span>
+                    Search Events
+                </label>
+                <div class="input-with-icon">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" id="search" placeholder="Search by keywords, faculty, hall, or topic...">
+                </div>
+            </div>
+
+            <div class="filter-group category-group">
+                <label for="category" class="filter-label">
+                    <span class="material-symbols-outlined">tune</span>
+                    Discipline
+                </label>
+                <div class="select-wrapper">
+                    <select id="category">
+                        <option value="All Categories">All Disciplines</option>
+                        <option value="Tech & Innovation">Tech &amp; Innovation</option>
+                        <option value="Arts & Culture">Arts &amp; Culture</option>
+                        <option value="Sports & Wellness">Sports &amp; Wellness</option>
+                        <option value="Academic Seminars">Academic Seminars</option>
+                    </select>
+                    <span class="material-symbols-outlined select-arrow">expand_more</span>
+                </div>
+            </div>
+
+            <!-- Practical 6: Multi-criteria Sorting -->
+            <div class="filter-group sort-group">
+                <label for="event-sort" class="filter-label">
+                    <span class="material-symbols-outlined">sort</span>
+                    Sort Order
+                </label>
+                <div class="select-wrapper">
+                    <select id="event-sort">
+                        <option value="date-asc">Date: Soonest First</option>
+                        <option value="date-desc">Date: Furthest First</option>
+                        <option value="title-asc">Title: A to Z</option>
+                        <option value="title-desc">Title: Z to A</option>
+                    </select>
+                    <span class="material-symbols-outlined select-arrow">expand_more</span>
+                </div>
+            </div>
+
+            <button type="button" class="btn-search" id="search-btn">
+                <span class="material-symbols-outlined">filter_list</span>
+                Filter Catalog
+            </button>
+        </section>
+
+        <!-- Dynamic Events Grid (Populated via js/script.js from data/events.json) -->
+        <section class="events-grid" id="events-grid">
+            <!-- Event cards dynamically rendered from /data/events.json -->
+        </section>
+
+        <!-- Pagination Section -->
+        <div class="events-pagination" id="events-pagination">
+            <button type="button" class="btn-pagination" id="prev-btn" aria-label="Previous Page">
+                <span class="material-symbols-outlined">chevron_left</span> Previous
+            </button>
+            <div class="pagination-pages" id="pagination-pages"></div>
+            <button type="button" class="btn-pagination" id="next-btn" aria-label="Next Page">
+                Next <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-title">
+                        <div class="brand-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <span>StudentHub</span>
+                    </div>
+                    <p class="footer-brand-desc">The centralized academic portal for university scholars, faculty
+                        collaboration, course registrations, and daily campus milestones.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>Main Quadrangle, Academic Hall East</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Academic</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Course Catalog</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="#">Library Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="FAQ.html">Help Center &amp; FAQ</a></li>
+                        <li><a href="feed-back.html">Submit Feedback</a></li>
+                        <li><a href="#">Health &amp; Wellness</a></li>
+                        <li><a href="contact.html">IT Service Desk</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Student Union</a></li>
+                        <li><a href="events.html">Campus Events</a></li>
+                        <li><a href="#">Housing &amp; Dining</a></li>
+                        <li><a href="#">Career Center</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 StudentHub University Academic Portal. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Practical 4 & Practical 7: Event Registration Modal System -->
+    <div class="modal-overlay" id="register-modal" style="display: none;" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card" id="event-modal-card">
+            <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
+            <!-- Hidden Inputs to track currently selected event -->
+            <input type="hidden" id="selected-event-id" value="1">
+            <input type="hidden" id="selected-event-title" value="">
+
+            <!-- STEP 1: Confirmation Step (Matches User's Image Exactly) -->
+            <div class="modal-step" id="modal-step-confirm">
+                <div class="modal-icon-wrap">
+                    <span class="material-symbols-outlined">person_check</span>
+                </div>
+                <h2 id="modal-title" class="modal-title">Are you ready? Let's get you registered!</h2>
+                <p class="modal-desc" id="modal-desc">
+                    Are you ready to join "<strong id="confirm-event-title">AI Workshop</strong>"? Confirm below to proceed or cancel anytime.
+                </p>
+
+                <!-- Student Booking Preview Badge -->
+                <div id="modal-student-badge-preview" style="display: none; background: var(--notice-bg, #faf1e8); border: 1px solid var(--notice-border, #ecdcd1); border-radius: 12px; padding: 10px 14px; margin: 0 auto 18px; max-width: 360px; text-align: left;">
+                    <div style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 3px;">Registering Student</div>
+                    <div style="font-size: 13.5px; font-weight: 700; color: var(--text-primary);" id="modal-preview-student-name">Student User</div>
+                    <div style="font-size: 12px; color: var(--text-secondary);" id="modal-preview-student-meta">STU-001 &bull; Department</div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal btn-modal-confirm" id="modal-btn-letsgo">
+                        Confirm &amp; Register
+                    </button>
+                    <button type="button" class="btn-modal btn-modal-decline" id="modal-btn-notyet">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Accept Student Unique ID -->
+            <div class="modal-step" id="modal-step-student-id" style="display: none;">
+                <div class="modal-icon-wrap">
+                    <span class="material-symbols-outlined">badge</span>
+                </div>
+                <h2 class="modal-title">Enter Student Unique ID</h2>
+                <p class="modal-desc" style="margin-bottom: 18px;">
+                    Please enter your registered Student Unique ID to book your seat for "<strong id="input-step-event-title">AI Workshop</strong>".
+                </p>
+
+                <form id="student-id-submit-form" novalidate>
+                    <div class="form-group" style="margin-bottom: 12px; text-align: left;">
+                        <label for="student-unique-id-field" style="display: block; font-size: 12.5px; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Student Unique ID *
+                        </label>
+                        <div style="position: relative;">
+                            <span class="material-symbols-outlined" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 20px; color: var(--text-muted); pointer-events: none;">tag</span>
+                            <input type="text" id="student-unique-id-field" placeholder="e.g., STU-001 or academic email" required autocomplete="off"
+                                style="width: 100%; height: 46px; padding: 0 14px 0 44px; border-radius: 12px; border: 1px solid var(--card-border); background: var(--bg-color); color: var(--text-primary); font-size: 14.5px; font-weight: 600; box-sizing: border-box; outline: none; transition: border-color 0.2s;">
+                        </div>
+                    </div>
+
+                    <!-- Live Error / Feedback Box -->
+                    <div id="step-id-feedback" style="display: none; padding: 10px 14px; border-radius: 10px; font-size: 13px; line-height: 1.4; margin-bottom: 14px; text-align: left;"></div>
+
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-modal btn-modal-confirm" id="btn-submit-student-id" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+                            <span>Confirm &amp; Register</span>
+                            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+                        </button>
+                        <button type="button" class="btn-modal btn-modal-decline" id="btn-back-to-step1">
+                            Back
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- STEP 3: Registration Completed (Popup that tells registration completed) -->
+            <div class="modal-step" id="modal-step-completed" style="display: none;">
+                <div class="modal-icon-wrap" style="background-color: #dcfce7; color: #15803d; border-color: rgba(21, 128, 61, 0.25);">
+                    <span class="material-symbols-outlined" style="font-size: 32px;">verified</span>
+                </div>
+                <h2 class="modal-title" style="color: var(--text-primary); margin-bottom: 6px;">Registration Completed!</h2>
+                <p class="modal-desc" style="margin-bottom: 16px; font-size: 13.5px;">
+                    Your booking is confirmed
+                </p>
+
+                <!-- Pass Details Card -->
+                <div style="background-color: var(--notice-bg, #faf1e8); border: 1px dashed var(--notice-border, #ecdcd1); border-radius: 14px; padding: 16px 18px; margin-bottom: 18px; text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                        <span style="font-size: 11.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Event Ticket ID</span>
+                        <span id="ticket-id-display" style="font-family: monospace; font-size: 15px; font-weight: 700; color: var(--primary);">EVT-REG-1003</span>
+                    </div>
+                    <div style="font-size: 13.5px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;" id="ticket-event-title-display">
+                        AI Workshop
+                    </div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 4px;">
+                        <strong>Student:</strong> <span id="ticket-student-name">Alex Johnson</span> (<span id="ticket-student-id">STU-1001</span>)
+                    </div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 4px;">
+                        <strong>Department:</strong> <span id="ticket-student-dept">Computer Engineering</span>
+                    </div>
+                    <div style="font-size: 12.5px; color: var(--text-muted);">
+                        <strong>Date:</strong> <span id="ticket-date-display">2026-10-04 21:15:00</span> &bull; <span style="color: #15803d; font-weight: 600;">Status: Confirmed</span>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal btn-modal-confirm" id="btn-completed-done" style="width: 100%;">
+                        Done
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Shared Script for theme toggle, event fetching, filter, pagination & registration -->
+    <script src="../js/script.js?v=8.0"></script>
+
+    <!-- Synchronize interactive Category Pills with select element -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pills = document.querySelectorAll('.category-pill');
+            const catSelect = document.getElementById('category');
+
+            if (pills.length > 0 && catSelect) {
+                pills.forEach(pill => {
+                    pill.addEventListener('click', () => {
+                        pills.forEach(p => p.classList.remove('active'));
+                        pill.classList.add('active');
+
+                        const targetCat = pill.getAttribute('data-cat') || 'All Categories';
+                        catSelect.value = targetCat;
+                        catSelect.dispatchEvent(new Event('change'));
+                    });
+                });
+
+                // Sync pills if select dropdown changes directly
+                catSelect.addEventListener('change', () => {
+                    const currentVal = catSelect.value;
+                    pills.forEach(pill => {
+                        if (pill.getAttribute('data-cat') === currentVal) {
+                            pill.classList.add('active');
+                        } else {
+                            pill.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

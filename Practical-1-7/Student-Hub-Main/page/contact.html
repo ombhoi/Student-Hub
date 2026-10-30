@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Contact Us</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/contact.css">
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">University Portal</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="about-us.html" class="nav-link">About</a></li>
+                    <li><a href="FAQ.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge"></span>
+                </button>
+                <span class="nav-divider"></span>
+                <a href="login.html" class="login-link">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+                <button class="user-avatar-btn" aria-label="User Profile">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+
+        <!-- Banner / Hero Section -->
+        <section class="contact-hero">
+            <h1>Contact &amp; Support <span class="serif-italic">Team</span></h1>
+            <p>Have questions, administrative inquiries, or technical issues? Reach out to our campus desk or operations support.</p>
+        </section>
+
+        <!-- Form & Sidebar Content Grid -->
+        <section class="contact-grid">
+
+            <!-- Left Column: Contact Form -->
+            <div class="contact-form-card">
+                <!-- Status Feedback Box -->
+                <div id="contact-feedback" style="display: none; padding: 16px 20px; border-radius: 14px; margin-bottom: 20px; font-size: 14px; line-height: 1.5;"></div>
+
+                <form action="../php/process_contact.php" method="POST" class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Alex Morgan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="alex.morgan@university.edu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" placeholder="How can our administration assist you?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describe your inquiry or issue in detail..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit-inquiry" id="btn-submit-inquiry">
+                        <span>Submit Inquiry</span>
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right Column: Sidebar Contact Info & Map -->
+            <aside class="contact-sidebar">
+
+                <!-- Contact Information Card -->
+                <div class="contact-info-card">
+                    <h2>Contact Information</h2>
+                    <ul class="contact-info-list">
+                        <li class="info-item">
+                            <div class="info-icon-wrapper">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div class="info-text">
+                                <strong>Campus Address:</strong>
+                                <p>DEPSTAR Academic Hall East<br>Central University Quadrangle</p>
+                            </div>
+                        </li>
+
+                        <li class="info-item">
+                            <div class="info-icon-wrapper">
+                                <span class="material-symbols-outlined">call</span>
+                            </div>
+                            <div class="info-text">
+                                <strong>Direct Desk:</strong>
+                                <p>+91 1234567890</p>
+                                <span class="hours-subtext">Mon – Fri, 9:00 AM – 4:00 PM IST</span>
+                            </div>
+                        </li>
+
+                        <li class="info-item">
+                            <div class="info-icon-wrapper">
+                                <span class="material-symbols-outlined">mail</span>
+                            </div>
+                            <div class="info-text">
+                                <strong>Operations Email:</strong>
+                                <a href="mailto:support@studenthub.edu" class="contact-email-link">support@studenthub.edu</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Campus Map Card -->
+                <div class="map-card">
+                    <div class="map-icon-wrapper">
+                        <span class="material-symbols-outlined">map</span>
+                    </div>
+                    <h3>Campus Map</h3>
+                    <span class="map-tag">Main Quadrangle &amp; Administrative Wings</span>
+                    <a href="#" class="btn-view-map">
+                        <span>View Interactive Map</span>
+                        <span class="material-symbols-outlined">east</span>
+                    </a>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-title">
+                        <div class="brand-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <span>StudentHub</span>
+                    </div>
+                    <p class="footer-brand-desc">The centralized academic portal for university scholars, faculty collaboration, course registrations, and daily campus milestones.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>Main Quadrangle, Academic Hall East</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Academic</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Course Catalog</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="#">Library Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="FAQ.html">Help Center &amp; FAQ</a></li>
+                        <li><a href="feed-back.html">Submit Feedback</a></li>
+                        <li><a href="#">Health &amp; Wellness</a></li>
+                        <li><a href="contact.html">IT Service Desk</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Student Union</a></li>
+                        <li><a href="events.html">Campus Events</a></li>
+                        <li><a href="#">Housing &amp; Dining</a></li>
+                        <li><a href="#">Career Center</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 StudentHub University Academic Portal. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            const feedbackBox = document.getElementById('contact-feedback');
+            const submitBtn   = document.getElementById('btn-submit-inquiry');
+
+            if (contactForm && feedbackBox) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const originalBtnContent = submitBtn ? submitBtn.innerHTML : '';
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<span>Submitting...</span><span class="material-symbols-outlined" style="font-size: 18px;">sync</span>';
+                    }
+
+                    // Hide any existing feedback
+                    feedbackBox.style.display = 'none';
+
+                    try {
+                        const formData = new FormData(contactForm);
+                        formData.append('ajax', '1');
+
+                        const response = await fetch('../php/process_contact.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success && result.inquiry) {
+                            feedbackBox.style.display = 'block';
+                            feedbackBox.style.background = '#f0fdf4';
+                            feedbackBox.style.border = '1px solid #bbf7d0';
+                            feedbackBox.style.color = '#166534';
+                            feedbackBox.innerHTML = `
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span class="material-symbols-outlined" style="font-size: 24px; color: #16a34a; flex-shrink: 0;">check_circle</span>
+                                    <span style="font-size: 14.5px; color: #15803d; font-weight: 600;">
+                                        Thank you, <strong>${result.inquiry.name}</strong>. Your message has been received.
+                                    </span>
+                                </div>
+                            `;
+                            contactForm.reset();
+                            feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        } else {
+                            let errorHtml = `<strong>Error Submitting Inquiry</strong><p style="margin: 4px 0 6px; font-size: 13px;">${result.message || 'Please check your inputs.'}</p>`;
+                            if (result.errors) {
+                                errorHtml += `<ul style="margin: 4px 0 0 16px; padding: 0; font-size: 12.5px;">`;
+                                for (const key in result.errors) {
+                                    errorHtml += `<li>${result.errors[key]}</li>`;
+                                }
+                                errorHtml += `</ul>`;
+                            }
+                            feedbackBox.style.display = 'block';
+                            feedbackBox.style.background = '#fef2f2';
+                            feedbackBox.style.border = '1px solid #fecaca';
+                            feedbackBox.style.color = '#991b1b';
+                            feedbackBox.innerHTML = errorHtml;
+                        }
+                    } catch (err) {
+                        feedbackBox.style.display = 'block';
+                        feedbackBox.style.background = '#fef2f2';
+                        feedbackBox.style.border = '1px solid #fecaca';
+                        feedbackBox.style.color = '#991b1b';
+                        feedbackBox.innerHTML = `<strong>Network Error:</strong> Failed to submit inquiry. Please try again.`;
+                    } finally {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnContent;
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

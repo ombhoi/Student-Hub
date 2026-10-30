@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - University Academic Portal</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/home.css">
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand-link">
+                <img src="image/studenthub-logo.webp" alt="StudentHub Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">University Portal</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="page/events.html" class="nav-link">Events</a></li>
+                    <li><a href="page/about-us.html" class="nav-link">About</a></li>
+                    <li><a href="page/FAQ.html" class="nav-link">FAQ</a></li>
+                    <li><a href="page/contact.html" class="nav-link">Contact</a></li>
+                    <li class="mobile-only-auth">
+                        <a href="page/login.html" class="mobile-auth-btn login-btn">Student Login</a>
+                        <a href="page/register.html" class="mobile-auth-btn register-btn">Register</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge"></span>
+                </button>
+                <span class="nav-divider"></span>
+                <a href="page/login.html" class="login-link">Login</a>
+                <a href="page/register.html" class="btn-register">Register</a>
+                <button class="user-avatar-btn" aria-label="User Profile">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+                <button id="mobile-menu-toggle" class="icon-btn mobile-hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="material-symbols-outlined hamburger-icon">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero-wrapper">
+            <div class="container">
+                <!-- Welcome Notification Banner -->
+                <div id="welcome-notification-banner" class="welcome-notification-banner">
+                    <div class="banner-left">
+                        <span class="material-symbols-outlined banner-icon">celebration</span>
+                        <div class="banner-text-content">
+                            <strong>Welcome to StudentHub!</strong>
+                            <span>Discover university events, academic schedules, exam timetables, and departmental notices all in one place.</span>
+                        </div>
+                    </div>
+                    <button type="button" id="close-welcome-banner" class="banner-close-btn" aria-label="Dismiss welcome notification">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+
+                <div class="hero-banner">
+                    <!-- Background Image Slider Track -->
+                    <div class="hero-slider-track">
+                        <div class="hero-slide active">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeIzOJnuCrozrZusTfPoE5pg4mPSyeVv0RGzR74HPUhn8MqrbKtaQyiOXR3Ht5sFFkA1hBa0080BVkwH8ua6bKp7IIH1R9eD1FnrBW3mQSDlVSo3rcHfW85we-lVLZMY2uMbm4NBL9FP_MVwbuz7Vhsfg3LdIU6UiRXyvFknfyDL0zk6yJ895vqhd3j0w5hcZnks4k3QLplkm7IOmWwpCh3Of6DNS1DTRoye0-548zxHmS_SSxRO9B" alt="University Library Interior" class="hero-bg-img">
+                        </div>
+                        <div class="hero-slide">
+                            <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1920&q=80" alt="Campus Quadrangle and Historic Hall" class="hero-bg-img">
+                        </div>
+                        <div class="hero-slide">
+                            <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80" alt="Collegiate Academic Grounds" class="hero-bg-img">
+                        </div>
+                    </div>
+                    
+                    <div class="hero-overlay"></div>
+
+                    <div class="hero-content">
+                        <div class="welcome-chip">
+                            <span class="material-symbols-outlined">badge</span>
+                            <span>Welcome Back, Alex</span>
+                        </div>
+                        <h1 class="hero-title">Your Academic <span class="serif-italic">Journey</span> &amp;<br>Campus Life</h1>
+                        <p class="hero-desc">Access real-time course syllabi, verify lecture hall bookings, review GPA pacing, and coordinate with scholarly research communities in one unified registry.</p>
+                    </div>
+
+                    <div class="hero-bottom">
+                        <div class="stats-card">
+                            <div class="stat-item">
+                                <span class="stat-label">Enrolled</span>
+                                <div class="stat-value">
+                                    <span class="stat-num">4</span>
+                                    <span class="stat-unit">Courses</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Due Next</span>
+                                <div class="stat-value">
+                                    <span class="stat-num">2</span>
+                                    <span class="stat-unit">Deadlines</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Cumulative</span>
+                                <div class="stat-value">
+                                    <span class="stat-num">3.84</span>
+                                    <span class="stat-unit">GPA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hero-actions">
+                            <a href="page/login.html" class="btn-hero-primary">
+                                <span class="material-symbols-outlined">space_dashboard</span>
+                                Access Dashboard
+                            </a>
+                            <a href="#" class="btn-hero-secondary">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                Weekly Schedule
+                            </a>
+                            <a href="#" class="link-audit">
+                                Audit Progress
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Slider Controls (Left arrow, center dots, right arrow at bottom) -->
+                    <div class="hero-slider-controls">
+                        <button type="button" class="slider-arrow-btn prev-btn" id="hero-prev-btn" aria-label="Previous Slide">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <div class="slider-dots" id="hero-slider-dots">
+                            <button type="button" class="slider-dot active" data-slide="0" aria-label="Slide 1" aria-current="true"></button>
+                            <button type="button" class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                            <button type="button" class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                        </div>
+                        <button type="button" class="slider-arrow-btn next-btn" id="hero-next-btn" aria-label="Next Slide">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Services & Quick Modules -->
+        <section class="services-section">
+            <div class="container">
+                <div class="services-header">
+                    <div>
+                        <h2 class="section-title">Campus Services &amp; Quick Modules</h2>
+                        <p class="section-subtitle">Frequently accessed university desks, administrative offices, and academic spaces.</p>
+                    </div>
+                    <span class="active-portals-tag">4 Portals Active</span>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-card-top">
+                            <div class="service-icon-wrap">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                            </div>
+                            <span class="service-tag tag-open">OPEN</span>
+                        </div>
+                        <h3>Campus Events</h3>
+                        <p>Autumn colloquia, guest lectures, hackathons, and union workshops.</p>
+                        <a href="page/events.html" class="service-link">
+                            Explore schedules
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-top">
+                            <div class="service-icon-wrap">
+                                <span class="material-symbols-outlined">history_edu</span>
+                            </div>
+                            <span class="service-tag tag-neutral">Term 1</span>
+                        </div>
+                        <h3>Academic Record</h3>
+                        <p>Verify degree progression audits, transcript requests, and grade...</p>
+                        <a href="page/login.html" class="service-link">
+                            View grades
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-top">
+                            <div class="service-icon-wrap">
+                                <span class="material-symbols-outlined">meeting_room</span>
+                            </div>
+                            <span class="service-tag tag-hours">24/7 HOURS</span>
+                        </div>
+                        <h3>Study Rooms</h3>
+                        <p>Reserve quiet booths, audio labs, and team project collaboration...</p>
+                        <a href="#" class="service-link">
+                            Reserve spaces
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-top">
+                            <div class="service-icon-wrap">
+                                <span class="material-symbols-outlined">support_agent</span>
+                            </div>
+                            <span class="service-tag tag-neutral">Advising</span>
+                        </div>
+                        <h3>Bursar &amp; Support</h3>
+                        <p>Financial aid disbursements, counseling appointments, and...</p>
+                        <a href="page/feed-back.html" class="service-link">
+                            Contact desk
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Updates & Notice Board Grid -->
+        <section class="main-content-section">
+            <div class="container">
+                <div class="main-grid">
+
+                    <!-- Recent Academic Updates Column -->
+                    <div class="updates-column">
+                        <div class="section-header-row">
+                            <div>
+                                <div class="title-with-icon">
+                                    <span class="material-symbols-outlined title-icon">newspaper</span>
+                                    <h2 class="section-title">Recent Academic Updates</h2>
+                                </div>
+                                <p class="section-subtitle">Notices, operational changes, and key registration windows.</p>
+                            </div>
+                            <a href="#" class="view-all-link">
+                                View All
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </a>
+                        </div>
+
+                        <div class="updates-list">
+                            <article class="update-card">
+                                <div class="date-badge">
+                                    <span class="date-day">17</span>
+                                    <span class="date-month">AUG</span>
+                                </div>
+                                <div class="update-body">
+                                    <div class="update-meta">
+                                        <span class="update-category">REGISTRATION</span>
+                                        <span class="update-read-time">· 2 min read</span>
+                                    </div>
+                                    <h3 class="update-title">Spring Semester Registration Window &amp; Course Catalogs</h3>
+                                    <p class="update-desc">Clear all departmental advisor holds on your university account prior to your seniority bracket appointment slot opening this Thursday.</p>
+                                </div>
+                                <div class="arrow-circle-btn">
+                                    <span class="material-symbols-outlined">north_east</span>
+                                </div>
+                            </article>
+
+                            <article class="update-card">
+                                <div class="date-badge">
+                                    <span class="date-day">10</span>
+                                    <span class="date-month">AUG</span>
+                                </div>
+                                <div class="update-body">
+                                    <div class="update-meta">
+                                        <span class="update-category">FACILITIES</span>
+                                        <span class="update-read-time">· 1 min read</span>
+                                    </div>
+                                    <h3 class="update-title">Library Hours Extended 24/7 for Midterms Examination</h3>
+                                    <p class="update-desc">Academic Hall East and central reference wings will provide round-the-clock card access, continuous Wi-Fi assistance, and late café services.</p>
+                                </div>
+                                <div class="arrow-circle-btn">
+                                    <span class="material-symbols-outlined">north_east</span>
+                                </div>
+                            </article>
+
+                            <article class="update-card">
+                                <div class="date-badge">
+                                    <span class="date-day">04</span>
+                                    <span class="date-month">AUG</span>
+                                </div>
+                                <div class="update-body">
+                                    <div class="update-meta">
+                                        <span class="update-category">COMPETITION</span>
+                                        <span class="update-read-time">· 3 min read</span>
+                                    </div>
+                                    <h3 class="update-title">Annual Campus Innovators &amp; Code Hackathon Registration</h3>
+                                    <p class="update-desc">Join interdisciplinary engineering and humanities cohorts for the 48-hour challenge. Over $20,000 in university research grants awarded.</p>
+                                </div>
+                                <div class="arrow-circle-btn">
+                                    <span class="material-symbols-outlined">north_east</span>
+                                </div>
+                            </article>
+
+                            <article class="update-card">
+                                <div class="date-badge">
+                                    <span class="date-day">01</span>
+                                    <span class="date-month">AUG</span>
+                                </div>
+                                <div class="update-body">
+                                    <div class="update-meta">
+                                        <span class="update-category">CAMPUS LIFE</span>
+                                        <span class="update-read-time">· 1 min read</span>
+                                    </div>
+                                    <h3 class="update-title">Student Union Dining &amp; Café Seasonal Autumn Menu</h3>
+                                    <p class="update-desc">Check out the locally farmed harvest selections, extended dietary allergen options, and sustainable fair-trade coffee bar offerings.</p>
+                                </div>
+                                <div class="arrow-circle-btn">
+                                    <span class="material-symbols-outlined">north_east</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Notice Board Column -->
+                    <aside class="notice-panel">
+                        <div class="notice-header">
+                            <div class="notice-header-icon">
+                                <span class="material-symbols-outlined">campaign</span>
+                            </div>
+                            <div class="notice-header-text">
+                                <h3>Notice Board</h3>
+                                <p>Critical Bulletins</p>
+                            </div>
+                        </div>
+
+                        <div class="bulletin-list">
+                            <div class="bulletin-card">
+                                <div class="bulletin-meta">
+                                    <span class="bulletin-tag tag-urgent">URGENT NOTICE</span>
+                                    <span class="bulletin-time">Sunday, 2:00 AM</span>
+                                </div>
+                                <h4 class="bulletin-title">Scheduled Portal Maintenance</h4>
+                                <p class="bulletin-desc">Central SSO, course registration tools, and grading modules will undergo server migrations between 2:00 AM and 4:00 AM IST.</p>
+                            </div>
+
+                            <div class="bulletin-card">
+                                <div class="bulletin-meta">
+                                    <span class="bulletin-tag tag-financial">FINANCIAL AID</span>
+                                    <span class="bulletin-time">Due Sep 21</span>
+                                </div>
+                                <h4 class="bulletin-title">Scholarship Priority Deadline</h4>
+                                <p class="bulletin-desc">Submit FAFSA renewal forms, departmental honors fellowship petitions, and work-study clearance documentation to the Bursar Office.</p>
+                            </div>
+
+                            <div class="bulletin-card">
+                                <div class="bulletin-meta">
+                                    <span class="bulletin-tag tag-exams">EXAMINATIONS</span>
+                                    <span class="bulletin-time">Published Today</span>
+                                </div>
+                                <h4 class="bulletin-title">Mid-Term Seating Rosters Released</h4>
+                                <p class="bulletin-desc">Auditorium numbers and seat index IDs for CS301, MATH204, and HIST112 have been confirmed.</p>
+                            </div>
+                        </div>
+
+                        <div class="notice-actions">
+                            <button class="btn-notice-download">
+                                <span class="material-symbols-outlined">download</span>
+                                Download Exam Schedule (PDF)
+                            </button>
+                            <button class="btn-notice-sms">
+                                <span class="material-symbols-outlined">sms</span>
+                                Subscribe to SMS Alerts
+                            </button>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- University Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-title">
+                        <div class="brand-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <span>StudentHub</span>
+                    </div>
+                    <p class="footer-brand-desc">The centralized academic portal for university scholars, faculty collaboration, course registrations, and daily campus milestones.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>Main Quadrangle, Academic Hall East</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Academic</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Course Catalog</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="page/login.html">Student Portal</a></li>
+                        <li><a href="page/events.html">Campus Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="page/FAQ.html">Help Center &amp; FAQ</a></li>
+                        <li><a href="page/feed-back.html">Submit Feedback</a></li>
+                        <li><a href="page/register.html">Student Registration</a></li>
+                        <li><a href="page/contact.html">IT Service Desk</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Student Union</a></li>
+                        <li><a href="page/events.html">Campus Events</a></li>
+                        <li><a href="#">Housing &amp; Dining</a></li>
+                        <li><a href="#">Career Center</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 StudentHub University Academic Portal. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

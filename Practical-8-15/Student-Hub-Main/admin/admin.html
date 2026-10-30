@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Administrative Control Console</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/admin.css?v=20261026_04">
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style id="auth-strict-guard">html, body { display: none !important; }</style>
+    <!-- Dedicated Floating Notification Popup Styles (Self-contained to bypass any stale browser cache) -->
+    <style id="notification-dropdown-styles">
+        .notification-wrapper {
+            position: relative !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        #btn-notifications {
+            position: relative !important;
+            background: transparent !important;
+            border: none !important;
+            color: var(--text-secondary, #6b5e52) !important;
+            cursor: pointer !important;
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 50% !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease !important;
+        }
+        #btn-notifications:hover {
+            color: var(--text-primary, #2d241e) !important;
+            background-color: rgba(194, 94, 62, 0.08) !important;
+        }
+        body[data-theme="dark"] #btn-notifications:hover {
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            color: #f5f0eb !important;
+        }
+        .notification-badge {
+            position: absolute !important;
+            top: 7px !important;
+            right: 7px !important;
+            width: 9px !important;
+            height: 9px !important;
+            background-color: #ef4444 !important;
+            border: 2px solid var(--card-bg, #ffffff) !important;
+            border-radius: 50% !important;
+            display: none;
+            pointer-events: none !important;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+        }
+        .notification-badge.active {
+            display: block !important;
+            animation: notifPulseDot 1.8s infinite !important;
+        }
+        @keyframes notifPulseDot {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        /* Floating Rectangular Pop-up Card */
+        .notification-dropdown {
+            position: absolute !important;
+            top: calc(100% + 12px) !important;
+            right: 0 !important;
+            width: 340px !important;
+            max-width: 92vw !important;
+            background: var(--card-bg, #ffffff) !important;
+            border: 1px solid var(--card-border, #e5ded6) !important;
+            border-radius: 14px !important;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+            z-index: 999999 !important;
+            display: none;
+            overflow: hidden !important;
+            font-family: inherit !important;
+        }
+        body[data-theme="dark"] .notification-dropdown {
+            background: #1e1e1e !important;
+            border-color: #333333 !important;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5) !important;
+        }
+        .notification-dropdown.show {
+            display: block !important;
+            animation: notifCardEntrance 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+        }
+        @keyframes notifCardEntrance {
+            0% { opacity: 0; transform: translateY(-8px) scale(0.97); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .notification-dropdown-header {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 12px 16px !important;
+            border-bottom: 1px solid var(--card-border, #e5ded6) !important;
+            background: rgba(194, 94, 62, 0.05) !important;
+        }
+        body[data-theme="dark"] .notification-dropdown-header {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border-color: #333333 !important;
+        }
+        .notification-dropdown-title {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            font-size: 13px !important;
+            font-weight: 700 !important;
+            color: var(--text-primary, #2d241e) !important;
+        }
+        body[data-theme="dark"] .notification-dropdown-title {
+            color: #f5f0eb !important;
+        }
+        .notification-dropdown-title .material-symbols-outlined {
+            font-size: 18px !important;
+            color: var(--primary, #c25e3e) !important;
+        }
+        .notification-count-tag {
+            font-size: 11px !important;
+            font-weight: 700 !important;
+            background: rgba(194, 94, 62, 0.12) !important;
+            color: var(--primary, #c25e3e) !important;
+            padding: 3px 9px !important;
+            border-radius: 999px !important;
+            letter-spacing: 0.3px !important;
+        }
+        .notification-dropdown-body {
+            padding: 8px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 6px !important;
+            max-height: 280px !important;
+            overflow-y: auto !important;
+            background: var(--card-bg, #ffffff) !important;
+        }
+        body[data-theme="dark"] .notification-dropdown-body {
+            background: #1e1e1e !important;
+        }
+        .notification-item {
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 11px !important;
+            padding: 10px !important;
+            border-radius: 10px !important;
+            background: transparent !important;
+            transition: background-color 0.15s ease !important;
+            border-left: 3px solid transparent !important;
+            text-align: left !important;
+        }
+        .notification-item:hover {
+            background-color: rgba(0, 0, 0, 0.04) !important;
+        }
+        body[data-theme="dark"] .notification-item:hover {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+        }
+        .notification-item.item-auth { border-left-color: #3b82f6 !important; }
+        .notification-item.item-student { border-left-color: #10b981 !important; }
+        .notification-item.item-event { border-left-color: #f59e0b !important; }
+        .notification-item.item-security { border-left-color: #ef4444 !important; }
+        .notif-symbol-box {
+            width: 34px !important;
+            height: 34px !important;
+            border-radius: 9px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+        }
+        .notif-symbol-box .material-symbols-outlined {
+            font-size: 18px !important;
+        }
+        .notif-symbol-box.sym-auth {
+            background-color: rgba(59, 130, 246, 0.12) !important;
+            color: #3b82f6 !important;
+        }
+        .notif-symbol-box.sym-student {
+            background-color: rgba(16, 185, 129, 0.12) !important;
+            color: #10b981 !important;
+        }
+        .notif-symbol-box.sym-event {
+            background-color: rgba(245, 158, 11, 0.12) !important;
+            color: #f59e0b !important;
+        }
+        .notif-symbol-box.sym-security {
+            background-color: rgba(239, 68, 68, 0.12) !important;
+            color: #ef4444 !important;
+        }
+        .notif-content {
+            flex: 1 !important;
+            min-width: 0 !important;
+        }
+        .notif-text {
+            font-size: 12px !important;
+            font-weight: 600 !important;
+            color: var(--text-primary, #2d241e) !important;
+            line-height: 1.35 !important;
+            margin-bottom: 4px !important;
+            word-break: break-word !important;
+        }
+        body[data-theme="dark"] .notif-text {
+            color: #f5f0eb !important;
+        }
+        .notif-meta {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            font-size: 10.5px !important;
+            color: var(--text-muted, #948779) !important;
+        }
+        .notif-actor {
+            font-weight: 600 !important;
+            color: var(--primary, #c25e3e) !important;
+        }
+        .notif-time {
+            font-size: 10px !important;
+            opacity: 0.85 !important;
+        }
+        .notification-dropdown-footer {
+            border-top: 1px solid var(--card-border, #e5ded6) !important;
+            padding: 10px 14px !important;
+            background: rgba(0, 0, 0, 0.02) !important;
+            text-align: center !important;
+        }
+        body[data-theme="dark"] .notification-dropdown-footer {
+            background: rgba(255, 255, 255, 0.02) !important;
+            border-color: #333333 !important;
+        }
+        .notification-dropdown-footer a {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 6px !important;
+            color: var(--primary, #c25e3e) !important;
+            font-size: 12px !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            transition: opacity 0.15s ease !important;
+        }
+        .notification-dropdown-footer a:hover {
+            text-decoration: underline !important;
+            opacity: 0.85 !important;
+        }
+        .notification-dropdown-footer a .material-symbols-outlined {
+            font-size: 15px !important;
+        }
+    </style>
+    <script>
+        document.documentElement.style.visibility = 'hidden';
+    </script>
+    <script src="../js/auth_guard.js?v=5.1"></script>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION (Squircle Navbar) -->
+    <header class="navbar admin-navbar">
+        <div class="navbar-container">
+            <a href="admin.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Admin" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">Administrative Console</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu"></ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <div class="notification-wrapper" id="notification-wrapper">
+                    <button class="icon-btn" id="btn-notifications" aria-label="Notifications" aria-expanded="false" title="Security &amp; Audit Notifications">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <span class="notification-badge" id="notification-badge"></span>
+                    </button>
+                    <div class="notification-dropdown" id="notification-dropdown" style="display: none;" aria-hidden="true">
+                        <div class="notification-dropdown-header">
+                            <div class="notification-dropdown-title">
+                                <span class="material-symbols-outlined">shield</span>
+                                <span>Recent Audit &amp; Security</span>
+                            </div>
+                            <span class="notification-count-tag" id="notification-count-tag">2 New</span>
+                        </div>
+                        <div class="notification-dropdown-body" id="notification-list">
+                            <div style="padding: 16px; text-align: center; color: var(--text-muted); font-size: 12px;">Loading recent audit events...</div>
+                        </div>
+                        <div class="notification-dropdown-footer">
+                            <a href="#audit" id="btn-view-all-audit">
+                                <span>View Full Audit Ledger</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span class="nav-divider"></span>
+                <div class="user-info">
+                    <span class="user-avatar-badge">AD</span>
+                    <span class="user-name">Admin User</span>
+                </div>
+                <a href="../php/logout.php" class="logout-link" title="Logout">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="dashboard-wrapper">
+        <div class="admin-layout">
+
+            <!-- LEFT SIDEBAR / ADMIN NAVIGATION -->
+            <aside class="admin-sidebar">
+                <div class="admin-profile-box">
+                    <div class="profile-badge-avatar">AD</div>
+                    <div class="admin-profile-info">
+                        <h3>Superadmin</h3>
+                        <p>Institutional Registry &amp; Records</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm btn-full btn-report">
+                        <span class="material-symbols-outlined">description</span>
+                        <span>Generate System Report</span>
+                    </button>
+                </div>
+
+                <nav class="sidebar-nav admin-nav">
+                    <ul>
+                        <li><a href="#" class="active"><span class="material-symbols-outlined">grid_view</span> Dashboard <span class="nav-badge active-badge">Overview</span></a></li>
+                        <li><a href="#manage-students"><span class="material-symbols-outlined">school</span> Manage Students <span class="nav-badge">Students</span></a></li>
+                        <li><a href="#manage-events"><span class="material-symbols-outlined">event_available</span> Event Moderation <span class="nav-badge">Events</span></a></li>
+                        <li><a href="#audit"><span class="material-symbols-outlined">security</span> Security Logs <span class="nav-badge">Audit</span></a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">campaign</span> Announcements</a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">reviews</span> Feedback &amp; Reports</a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">settings</span> System Settings</a></li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-db-status">
+                    <div class="db-status-header">
+                        <span class="pulse-dot green"></span>
+                        <span class="db-status-title">MySQL Database Connected</span>
+                    </div>
+                    <div class="db-status-details">
+                        <span>Engine: InnoDB (ACID)</span>
+                        <span class="db-latency">Latency 14ms</span>
+                    </div>
+                    <div class="db-status-security">TLS 1.3 Strict Mode &bull; TLS_AES_256</div>
+                </div>
+
+                <div class="admin-sidebar-footer">
+                    <ul>
+                        <li><a href="../page/contact.html"><span class="material-symbols-outlined">help</span> Support Desk</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN ADMIN PANEL CONTENT -->
+            <section class="admin-main-content">
+                
+                <!-- ADMIN HERO / BANNER -->
+                <div class="admin-hero">
+                    <div class="hero-ambient-glow glow-1"></div>
+                    <div class="hero-ambient-glow glow-2"></div>
+                    
+                    <div class="hero-content">
+                        <div class="hero-chip-pill">
+                            <span class="pulse-dot amber"></span>
+                            <span>ADMINISTRATIVE CONTROL CENTER &bull; ROLE-BASED ACCESS</span>
+                        </div>
+                        <h1>Academic Operations &amp; <span class="hero-italic-accent">Governance</span> Portal</h1>
+                        <p>Centralized registry control for student lifecycle management, event accreditation, and institutional audit tracking across university departments.</p>
+                    </div>
+
+                    <!-- EMBEDDED GLASSMORPHIC STATS GRID -->
+                    <div class="admin-stats-grid glassmorphic-stats">
+                        <div class="admin-stat-card stat-glass">
+                            <div class="stat-top">
+                                <span class="stat-title">Total Students</span>
+                                <span class="stat-badge badge-green">+4.2% Growth</span>
+                            </div>
+                            <div class="stat-value" id="hero-total-students">22</div>
+                            <span class="stat-sub">Verified registry records</span>
+                        </div>
+
+                        <div class="admin-stat-card stat-glass">
+                            <div class="stat-top">
+                                <span class="stat-title">Active Events</span>
+                                <span class="stat-badge badge-amber">Accredited</span>
+                            </div>
+                            <div class="stat-value" id="hero-active-events">6</div>
+                            <span class="stat-sub">Accredited by council</span>
+                        </div>
+
+                        <div class="admin-stat-card stat-glass">
+                            <div class="stat-top">
+                                <span class="stat-title">Event Registrations</span>
+                                <span class="stat-badge badge-green" id="hero-reg-badge">Active</span>
+                            </div>
+                            <div class="stat-value" id="hero-total-registrations">...</div>
+                            <span class="stat-sub">Across campus events</span>
+                        </div>
+
+                        <div class="admin-stat-card stat-glass">
+                            <div class="stat-top">
+                                <span class="stat-title">Audit Entries</span>
+                                <span class="stat-badge badge-sky" id="hero-audit-badge">Live Ledger</span>
+                            </div>
+                            <div class="stat-value" id="hero-total-audits">...</div>
+                            <span class="stat-sub">SHA-256 secured audit trail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUICK ACTION BUTTONS -->
+                <div class="admin-quick-actions">
+                    <span class="quick-actions-title">QUICK ACTIONS</span>
+                    <div class="quick-actions-grid">
+                        <button type="button" onclick="adminCrud.openAddModal()" class="btn btn-primary action-btn"><span class="material-symbols-outlined">person_add</span> <span>Add Student</span></button>
+                        <button type="button" onclick="adminEventCrud.openAddModal()" class="btn btn-primary action-btn"><span class="material-symbols-outlined">add_circle</span> <span>Create Event</span></button>
+                        <button type="button" onclick="adminCrud.exportCsv()" class="btn btn-outline action-btn"><span class="material-symbols-outlined">download</span> <span>Export Registry CSV</span></button>
+                        <button type="button" onclick="adminCrud.reload(); adminEventCrud.reload();" class="btn btn-outline action-btn"><span class="material-symbols-outlined">refresh</span> <span>Refresh All</span></button>
+                    </div>
+                </div>
+
+                <!-- RECENT REQUESTS / STUDENT REGISTRY (CRUD MODULE) -->
+                <div id="manage-students" class="admin-requests-section">
+                    <div class="requests-header">
+                        <div>
+                            <div class="section-title-wrap">
+                                <h2>Student Registry Management</h2>
+                                <span class="module-chip">Active Registry</span>
+                            </div>
+                            <p class="section-subtitle">Institutional student records with real-time MySQL search, departmental filters, and records export</p>
+                        </div>
+                        <div class="header-action-group">
+                            <button type="button" id="btn-export-csv" class="btn btn-outline btn-sm" title="Export student registry as CSV">
+                                <span class="material-symbols-outlined">download</span>
+                                <span>Export CSV</span>
+                            </button>
+                            <button type="button" id="btn-add-student" class="btn btn-primary btn-sm" title="Add a new student record">
+                                <span class="material-symbols-outlined">person_add</span>
+                                <span>Add New Student</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH & FILTER TOOLBAR -->
+                    <div class="filter-toolbar">
+                        <div class="search-box">
+                            <span class="material-symbols-outlined search-icon">search</span>
+                            <input type="text" id="student-search-input" placeholder="Search by Student ID, name, email or roll number..." class="filter-input">
+                        </div>
+                        <div class="filter-actions">
+                            <select id="student-dept-filter" class="filter-select">
+                                <option value="all">All Departments</option>
+                                <option value="Computer Engineering">Computer Engineering</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="AI & Data Science">AI &amp; Data Science</option>
+                                <option value="Electronics &amp; Communication">Electronics &amp; Communication</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                            </select>
+                            <button type="button" id="student-reset-filter" class="btn btn-outline btn-filter" title="Reset Filters">
+                                <span class="material-symbols-outlined">restart_alt</span> <span>Reset</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="requests-list">
+                        <!-- HEADER ROW -->
+                        <div class="request-list-header">
+                            <div class="col-id-date">Student / Code</div>
+                            <div class="col-title-user">Email &amp; Department</div>
+                            <div class="col-category">Semester</div>
+                            <div class="col-status">Status</div>
+                            <div class="col-actions">Actions</div>
+                        </div>
+
+                        <!-- DYNAMIC CONTAINER POPULATED VIA JS -->
+                        <div id="students-table-body"></div>
+                    </div>
+
+                    <!-- PAGINATION BAR -->
+                    <div id="crud-pagination-bar" class="pagination-bar" style="display: none;">
+                        <span id="pagination-summary">Loading records...</span>
+                        <div class="pagination-controls">
+                            <button type="button" id="btn-prev-page" class="pagination-btn" disabled>
+                                <span class="material-symbols-outlined" style="font-size: 18px;">chevron_left</span> Previous
+                            </button>
+                            <span id="page-indicator" class="page-indicator">Page 1 of 1</span>
+                            <button type="button" id="btn-next-page" class="pagination-btn" disabled>
+                                Next <span class="material-symbols-outlined" style="font-size: 18px;">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================================================================= -->
+                <!-- PRACTICAL 12: CAMPUS EVENT MODERATION & POSTER UPLOAD MODULE     -->
+                <!-- ================================================================= -->
+                <div id="manage-events" class="admin-events-section">
+                    <div class="requests-header">
+                        <div>
+                            <div class="section-title-wrap">
+                                <h2>Campus Event Moderation &amp; Media Upload</h2>
+                                <span class="module-chip" style="background: rgba(245, 158, 11, 0.15); color: #d97706; border-color: rgba(245, 158, 11, 0.3);">Event Moderation</span>
+                                <span class="module-chip" style="background: rgba(14, 165, 233, 0.15); color: #0284c7; border-color: rgba(14, 165, 233, 0.3);">Live Sync</span>
+                                <span id="events-count-badge" class="badge-tag" style="font-size: 11px; padding: 3px 8px; border-radius: 6px; background: rgba(133, 45, 27, 0.1); color: var(--primary);">Loading...</span>
+                            </div>
+                            <p class="section-subtitle">Asynchronous event management system with debounced live search, secure poster upload, and zero-reload updates.</p>
+                        </div>
+                        <div class="header-action-group">
+                            <button type="button" id="btn-add-event" class="btn btn-primary btn-sm" title="Publish new campus event with poster">
+                                <span class="material-symbols-outlined">add_circle</span>
+                                <span>Create New Event</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Live API Status Strip & Zero-Reload Inspector -->
+                    <div class="api-status-strip" id="p13-api-strip">
+                        <div class="api-strip-left">
+                            <span class="pulse-dot green"></span>
+                            <span class="api-strip-title"><strong>Zero-Reload Engine:</strong> Live event service active (<code>php/event_crud.php</code>)</span>
+                            <span class="api-protocol-badge">Fetch API &bull; Real-Time Streaming</span>
+                        </div>
+                        <div class="api-strip-right">
+                            <span id="api-latency-indicator" class="api-latency-pill">Latency: <span id="api-latency-val">~12ms</span></span>
+                            <button type="button" id="btn-test-api-ping" class="btn btn-outline btn-xs" title="Verify Event Service Connection">
+                                <span class="material-symbols-outlined" style="font-size: 15px;">network_check</span>
+                                <span>Test Service Ping</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH & FILTER TOOLBAR -->
+                    <div class="filter-toolbar">
+                        <div class="search-box">
+                            <span class="material-symbols-outlined search-icon">search</span>
+                            <input type="text" id="event-search-input" placeholder="Search events by title, description, location, or tag..." class="filter-input">
+                        </div>
+                        <div class="filter-actions">
+                            <select id="event-category-filter" class="filter-select">
+                                <option value="all">All Categories</option>
+                                <option value="Tech & Innovation">Tech &amp; Innovation</option>
+                                <option value="Arts & Culture">Arts &amp; Culture</option>
+                                <option value="Academic">Academic</option>
+                                <option value="Sports & Athletics">Sports &amp; Athletics</option>
+                                <option value="Leadership & Careers">Leadership &amp; Careers</option>
+                                <option value="Workshop">Workshop</option>
+                            </select>
+
+                            <select id="event-status-filter" class="filter-select">
+                                <option value="all">All Statuses</option>
+                                <option value="upcoming">Upcoming</option>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+
+                            <button type="button" id="event-reset-filter" class="btn btn-outline btn-filter" title="Reset Event Filters">
+                                <span class="material-symbols-outlined">restart_alt</span> <span>Reset</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- DYNAMIC EVENTS GRID -->
+                    <div id="events-cards-container" class="events-cards-grid">
+                        <!-- Populated dynamically via admin_event_crud.js -->
+                    </div>
+
+                    <!-- EVENT PAGINATION BAR -->
+                    <div id="event-pagination-bar" class="pagination-bar" style="display: none; margin-top: 24px;">
+                        <span id="event-pagination-summary">Loading events...</span>
+                        <div class="pagination-controls">
+                            <button type="button" id="btn-event-prev-page" class="pagination-btn" disabled>
+                                <span class="material-symbols-outlined" style="font-size: 18px;">chevron_left</span> Previous
+                            </button>
+                            <span id="event-page-indicator" class="page-indicator">Page 1 of 1</span>
+                            <button type="button" id="btn-event-next-page" class="pagination-btn" disabled>
+                                Next <span class="material-symbols-outlined" style="font-size: 18px;">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================================================================= -->
+                <!-- ANALYTICS & RECENT ACTIVITY FEED                                 -->
+                <!-- ================================================================= -->
+                <div class="analytics-dual-grid" style="margin-top: 32px;">
+                    <!-- LEFT CARD: RECENT EVENT REGISTRATIONS FEED -->
+                    <div class="admin-requests-section admin-analytics-card">
+                        <div class="requests-header" style="margin-bottom: 16px;">
+                            <div>
+                                <div class="section-title-wrap">
+                                    <h3 class="analytics-card-title">
+                                        <span class="material-symbols-outlined icon-accent-blue">how_to_reg</span>
+                                        <span>Recent Registrations</span>
+                                    </h3>
+                                    <span class="module-chip chip-emerald" id="registrations-count-badge">Live Stream</span>
+                                </div>
+                                <p class="section-subtitle">Real-time student enrollments across accredited campus events</p>
+                            </div>
+                        </div>
+                        <div id="recent-registrations-container" class="recent-registrations-list">
+                            <div class="table-loading-state">
+                                <span class="material-symbols-outlined table-spinner">sync</span>
+                                <div>Streaming recent student registrations...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT CARD: CATEGORY DISTRIBUTION -->
+                    <div class="admin-requests-section admin-analytics-card">
+                        <div class="requests-header" style="margin-bottom: 16px;">
+                            <div>
+                                <div class="section-title-wrap">
+                                    <h3 class="analytics-card-title">
+                                        <span class="material-symbols-outlined icon-accent-amber">pie_chart</span>
+                                        <span>Category Distribution</span>
+                                    </h3>
+                                    <span class="module-chip chip-amber">Accredited Events</span>
+                                </div>
+                                <p class="section-subtitle">Breakdown of accredited campus events by academic faculty</p>
+                            </div>
+                        </div>
+                        <div id="category-distribution-container" class="category-bars-list">
+                            <div class="table-loading-state">
+                                <span class="material-symbols-outlined table-spinner">sync</span>
+                                <div>Calculating category metrics...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================================================================= -->
+                <!-- INSTITUTIONAL SECURITY & AUDIT TRAIL LOGS                        -->
+                <!-- ================================================================= -->
+                <div id="audit" class="admin-requests-section" style="margin-top: 32px;">
+                    <div class="requests-header">
+                        <div>
+                            <div class="section-title-wrap">
+                                <h2>Institutional Security &amp; Audit Ledger</h2>
+                                <span class="module-chip chip-indigo">IMMUTABLE LOGS</span>
+                                <span class="status-chip chip-active" style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <span class="pulse-dot green"></span>
+                                    <span>Active Ledger</span>
+                                </span>
+                            </div>
+                            <p class="section-subtitle">Cryptographically traceable audit trail recording administrator authentication, event moderation, and student registry mutations with IP origin and timestamps.</p>
+                        </div>
+                        <div class="header-action-group">
+                            <button type="button" id="btn-refresh-audit" class="btn btn-outline btn-sm" title="Refresh Audit Logs">
+                                <span class="material-symbols-outlined">refresh</span>
+                                <span>Refresh Logs</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- AUDIT FILTER TOOLBAR -->
+                    <div class="filter-toolbar audit-toolbar">
+                        <div class="audit-filter-pills" id="audit-filter-group">
+                            <button type="button" class="audit-pill active" data-filter="all">All Activities</button>
+                            <button type="button" class="audit-pill" data-filter="auth">Authentication</button>
+                            <button type="button" class="audit-pill" data-filter="event">Event Moderation</button>
+                            <button type="button" class="audit-pill" data-filter="student">Student Registry</button>
+                        </div>
+                        <div class="search-box" style="flex: 0 1 320px;">
+                            <span class="material-symbols-outlined search-icon">search</span>
+                            <input type="text" id="audit-search-input" class="filter-input" placeholder="Search by user, action, details, IP...">
+                        </div>
+                    </div>
+
+                    <!-- AUDIT LOGS TABLE -->
+                    <div class="audit-table-wrapper">
+                        <table class="audit-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px; min-width: 110px;">Log ID</th>
+                                    <th style="width: 180px; min-width: 180px;">Timestamp</th>
+                                    <th style="width: 150px; min-width: 150px;">Actor / Role</th>
+                                    <th style="width: 160px; min-width: 160px;">Action Type</th>
+                                    <th style="width: 120px; min-width: 120px;">Entity</th>
+                                    <th>Operation Details</th>
+                                    <th style="width: 120px; min-width: 120px; text-align: right;">IP Address</th>
+                                </tr>
+                            </thead>
+                            <tbody id="audit-table-body">
+                                <tr>
+                                    <td colspan="7" class="table-loading-state">
+                                        <span class="material-symbols-outlined table-spinner">sync</span>
+                                        <div>Loading institutional audit trail...</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- University Footer (matching index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-title">
+                        <div class="brand-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <span>StudentHub</span>
+                    </div>
+                    <p class="footer-brand-desc">The centralized administrative and academic portal for university scholars, staff governance, course registrations, and daily campus milestones.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>Main Quadrangle, Academic Hall East</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Admin Console</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#manage-students">Student Registry</a></li>
+                        <li><a href="#events">Event Moderation</a></li>
+                        <li><a href="#audit">Security Audit Logs</a></li>
+                        <li><a href="#diagnostics">Database Diagnostics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Operations</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#reports">System Reports</a></li>
+                        <li><a href="#announcements">Broadcast Alerts</a></li>
+                        <li><a href="../page/contact.html">IT Service Desk</a></li>
+                        <li><a href="#backup">Database Backup</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Institutional Access</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="admin.html">Admin Dashboard</a></li>
+                        <li><a href="#governance">Campus Governance</a></li>
+                        <li><a href="#accreditation">Academic Accreditation</a></li>
+                        <li><a href="../php/logout.php">Logout Console</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 StudentHub University Academic Portal. Administrative Console.</p>
+                <div class="footer-legal-links">
+                    <a href="../page/about-us.html">Privacy Policy</a>
+                    <a href="../page/about-us.html">Terms of Service</a>
+                    <a href="../page/about-us.html">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================================================================= -->
+    <!-- PRACTICAL 11: STUDENT MANAGEMENT CRUD MODALS                     -->
+    <!-- ================================================================= -->
+
+    <!-- 1. ADD / EDIT STUDENT MODAL -->
+    <div id="student-modal" class="admin-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="student-modal-title">
+        <div class="admin-modal-container">
+            <div class="admin-modal-header">
+                <h3 id="student-modal-title">Add New Student Record</h3>
+                <button type="button" class="admin-modal-close" data-modal-close="student-modal" aria-label="Close modal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form id="student-form">
+                <input type="hidden" id="student-id-input" name="student_id" value="">
+                <div class="admin-modal-body">
+                    <div class="modal-form-grid">
+                        <div class="modal-field">
+                            <label for="student-first-name" class="modal-label">First Name *</label>
+                            <input type="text" id="student-first-name" name="first_name" class="modal-input" placeholder="e.g. Marcus" required>
+                        </div>
+                        <div class="modal-field">
+                            <label for="student-last-name" class="modal-label">Last Name *</label>
+                            <input type="text" id="student-last-name" name="last_name" class="modal-input" placeholder="e.g. Vance" required>
+                        </div>
+                        <div class="modal-field full-col">
+                            <label for="student-email" class="modal-label">University Email *</label>
+                            <input type="email" id="student-email" name="email" class="modal-input" placeholder="student@charusat.edu.in" required>
+                        </div>
+                        <div class="modal-field">
+                            <label for="student-roll-number" class="modal-label">Roll Number / Reg ID *</label>
+                            <input type="text" id="student-roll-number" name="roll_number" class="modal-input" placeholder="e.g. 22CE001" required>
+                        </div>
+                        <div class="modal-field">
+                            <label for="student-phone" class="modal-label">Phone Number (10 Digits)</label>
+                            <input type="tel" id="student-phone" name="phone" class="modal-input" placeholder="e.g., 9876543210" maxlength="10" pattern="[1-9][0-9]{9}" inputmode="numeric" autocomplete="tel">
+                        </div>
+                        <div class="modal-field">
+                            <label for="student-dept-select" class="modal-label">Academic Department *</label>
+                            <select id="student-dept-select" name="department" class="modal-select" required>
+                                <option value="Computer Engineering">Computer Engineering</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="AI & Data Science">AI &amp; Data Science</option>
+                                <option value="Electronics &amp; Communication">Electronics &amp; Communication</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                            </select>
+                        </div>
+                        <div class="modal-field">
+                            <label for="student-semester-select" class="modal-label">Semester *</label>
+                            <select id="student-semester-select" name="semester" class="modal-select" required>
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5" selected>Semester 5</option>
+                                <option value="6">Semester 6</option>
+                                <option value="7">Semester 7</option>
+                                <option value="8">Semester 8</option>
+                            </select>
+                        </div>
+                        <div class="modal-field full-col">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+                                <label for="student-password" class="modal-label" id="student-password-label">Student Account Password *</label>
+                                <span id="student-password-badge" style="font-size: 11px; color: var(--text-muted);">Admin sets password to give to student</span>
+                            </div>
+                            <div style="position: relative; display: flex; align-items: center;">
+                                <input type="password" id="student-password" name="password" class="modal-input" placeholder="e.g. Password@123 (min 8 chars)" style="padding-right: 42px;" autocomplete="new-password">
+                                <button type="button" id="toggle-student-pw" style="position: absolute; right: 10px; background: none; border: none; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; padding: 4px;" aria-label="Toggle password visibility" title="Show/Hide Password">
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+                                </button>
+                            </div>
+                            <span class="modal-hint" id="student-password-hint" style="font-size: 11.5px; color: var(--text-muted); margin-top: 3px; display: block;">Enter the password you will provide to the student (or leave blank to assign default <code>password123</code>).</span>
+                        </div>
+                        <div class="modal-field full-col">
+                            <label for="student-bio" class="modal-label">Academic Bio / Specialization</label>
+                            <textarea id="student-bio" name="bio" class="modal-textarea" placeholder="Brief note on research interests, projects, or student involvement..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-modal-footer">
+                    <button type="button" class="btn btn-outline btn-sm" data-modal-close="student-modal">Cancel</button>
+                    <button type="submit" id="btn-save-student" class="btn btn-primary btn-sm">
+                        <span class="material-symbols-outlined">person_add</span>
+                        <span>Save Student</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. DELETE CONFIRMATION MODAL -->
+    <div id="delete-confirm-modal" class="admin-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+        <div class="admin-modal-container" style="max-width: 480px;">
+            <div class="admin-modal-header" style="border-bottom-color: rgba(239, 68, 68, 0.2);">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span class="material-symbols-outlined" style="color: #ef4444; font-size: 24px;">warning</span>
+                    <h3 id="delete-modal-title" style="color: #b91c1c;">Confirm Student Deletion</h3>
+                </div>
+                <button type="button" class="admin-modal-close" data-modal-close="delete-confirm-modal" aria-label="Close modal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="delete-warning-box">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">info</span>
+                    <div>Are you sure you want to delete this student record? This database delete operation will permanently remove all associated registrations.</div>
+                </div>
+                <div class="student-preview-card">
+                    <div class="student-preview-row">
+                        <span class="label">Student Name:</span>
+                        <span id="delete-student-name" class="val">Marcus Vance</span>
+                    </div>
+                    <div class="student-preview-row">
+                        <span class="label">Student Identifier:</span>
+                        <span id="delete-student-code" class="val">#STU-002</span>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-outline btn-sm" data-modal-close="delete-confirm-modal">Cancel</button>
+                <button type="button" id="btn-confirm-delete" class="btn btn-danger btn-sm">
+                    <span class="material-symbols-outlined">delete_forever</span>
+                    <span>Yes, Delete Record</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. VIEW STUDENT DETAILS MODAL -->
+    <div id="view-student-modal" class="admin-modal-backdrop" role="dialog" aria-modal="true">
+        <div class="admin-modal-container" style="max-width: 520px;">
+            <div class="admin-modal-header">
+                <h3>Student Registry Details</h3>
+                <button type="button" class="admin-modal-close" data-modal-close="view-student-modal" aria-label="Close modal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="admin-modal-body">
+                <div id="view-student-container"></div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-outline btn-sm" data-modal-close="view-student-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- PRACTICAL 12: CAMPUS EVENT MODERATION & POSTER UPLOAD MODALS      -->
+    <!-- ================================================================= -->
+
+    <!-- 1. ADD / EDIT EVENT MODAL -->
+    <div id="event-modal" class="admin-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+        <div class="admin-modal-container" style="max-width: 680px;">
+            <div class="admin-modal-header">
+                <h3 id="event-modal-title">Create New Campus Event</h3>
+                <button type="button" class="admin-modal-close" data-modal-close="event-modal" aria-label="Close modal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form id="event-form" enctype="multipart/form-data">
+                <input type="hidden" id="event-id-input" name="event_id" value="">
+                <div class="admin-modal-body">
+                    <div class="modal-form-grid">
+                        <div class="modal-field full-col">
+                            <label for="event-title" class="modal-label">Event Title *</label>
+                            <input type="text" id="event-title" name="title" class="modal-input" placeholder="e.g. National Hackathon 2026: InnovateAI" required>
+                        </div>
+
+                        <div class="modal-field">
+                            <label for="event-category" class="modal-label">Academic Category *</label>
+                            <select id="event-category" name="category" class="modal-select" required>
+                                <option value="">Select Category</option>
+                                <option value="Tech & Innovation">Tech &amp; Innovation</option>
+                                <option value="Arts & Culture">Arts &amp; Culture</option>
+                                <option value="Academic">Academic</option>
+                                <option value="Sports & Athletics">Sports &amp; Athletics</option>
+                                <option value="Leadership & Careers">Leadership &amp; Careers</option>
+                                <option value="Workshop">Workshop</option>
+                            </select>
+                        </div>
+
+                        <div class="modal-field">
+                            <label for="event-badge" class="modal-label">Badge / Chip Tag</label>
+                            <input type="text" id="event-badge" name="badge" class="modal-input" placeholder="e.g. Hackathon, Tech, Cultural" value="Event">
+                        </div>
+
+                        <div class="modal-field">
+                            <label for="event-location" class="modal-label">Venue Location *</label>
+                            <input type="text" id="event-location" name="location" class="modal-input" placeholder="e.g. Tech Hub Auditorium, Room 402" required>
+                        </div>
+
+                        <div class="modal-field">
+                            <label for="event-date" class="modal-label">Event Date &amp; Time *</label>
+                            <input type="datetime-local" id="event-date" name="event_date" class="modal-input" required>
+                        </div>
+
+                        <div class="modal-field">
+                            <label for="event-capacity" class="modal-label">Maximum Seating Capacity *</label>
+                            <input type="number" id="event-capacity" name="max_capacity" class="modal-input" min="1" max="10000" value="100" required>
+                        </div>
+
+                        <div class="modal-field">
+                            <label for="event-status" class="modal-label">Lifecycle Status *</label>
+                            <select id="event-status" name="status" class="modal-select" required>
+                                <option value="upcoming" selected>Upcoming</option>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+
+                        <!-- Event Poster Upload & File Validation Area -->
+                        <div class="modal-field full-col">
+                            <label class="modal-label">Event Poster Media (Max 2MB &bull; JPEG, PNG, WebP, GIF)</label>
+                            <input type="file" id="event-poster-input" name="poster" accept="image/jpeg,image/png,image/webp,image/gif" style="display: none;">
+                            
+                            <div id="event-poster-dropzone" class="upload-dropzone">
+                                <div class="dropzone-content">
+                                    <span class="material-symbols-outlined dropzone-icon">cloud_upload</span>
+                                    <div class="dropzone-title">Click to upload poster or drag and drop image file</div>
+                                    <div class="dropzone-hint">Supported formats: JPEG, PNG, WebP, GIF &bull; Strict Max Size: 2MB</div>
+                                </div>
+
+                                <div id="poster-preview-wrap" class="poster-preview-wrap">
+                                    <img id="poster-preview-img" src="" alt="Poster preview" class="poster-preview-img">
+                                    <div id="poster-file-info" class="poster-file-info"></div>
+                                    <button type="button" id="btn-remove-poster" class="btn-remove-poster" title="Remove poster">
+                                        <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-field full-col">
+                            <label for="event-description" class="modal-label">Detailed Event Agenda / Description</label>
+                            <textarea id="event-description" name="description" class="modal-textarea" rows="3" placeholder="Provide full syllabus, speakers, prerequisites, and registration guidelines..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-modal-footer">
+                    <button type="button" class="btn btn-outline btn-sm" data-modal-close="event-modal">Cancel</button>
+                    <button type="submit" id="btn-save-event" class="btn btn-primary btn-sm">
+                        <span class="material-symbols-outlined">add_circle</span>
+                        <span>Publish Event</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. DELETE EVENT CONFIRMATION MODAL -->
+    <div id="delete-event-modal" class="admin-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="delete-event-modal-title">
+        <div class="admin-modal-container" style="max-width: 480px;">
+            <div class="admin-modal-header" style="border-bottom-color: rgba(239, 68, 68, 0.2);">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span class="material-symbols-outlined" style="color: #ef4444; font-size: 24px;">warning</span>
+                    <h3 id="delete-event-modal-title" style="color: #b91c1c;">Confirm Event Deletion</h3>
+                </div>
+                <button type="button" class="admin-modal-close" data-modal-close="delete-event-modal" aria-label="Close modal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="delete-warning-box">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">info</span>
+                    <div>Are you sure you want to delete this campus event? This MySQL delete operation will remove the event record and clean up any uploaded poster media.</div>
+                </div>
+                <div class="student-preview-card" style="align-items: center; text-align: center;">
+                    <img id="delete-event-poster" src="../image/Full-Stack.jpg" alt="Poster preview" style="width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 8px;">
+                    <h4 id="delete-event-title" style="font-size: 15px; font-weight: 700; color: var(--text-primary);">AI Workshop</h4>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-outline btn-sm" data-modal-close="delete-event-modal">Cancel</button>
+                <button type="button" id="btn-confirm-delete-event" class="btn btn-danger btn-sm">
+                    <span class="material-symbols-outlined">delete_forever</span>
+                    <span>Yes, Delete Event</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. VIEW EVENT DETAILS MODAL -->
+    <div id="view-event-modal" class="admin-modal-backdrop" role="dialog" aria-modal="true">
+        <div class="admin-modal-container" style="max-width: 600px;">
+            <div class="admin-modal-header">
+                <h3>Campus Event Details</h3>
+                <button type="button" class="admin-modal-close" data-modal-close="view-event-modal" aria-label="Close modal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="admin-modal-body">
+                <div id="view-event-container"></div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-outline btn-sm" data-modal-close="view-event-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="crud-toast-container" class="crud-toast-container"></div>
+
+    <!-- Shared Application Script for Dark Theme and Interactivity -->
+    <script src="../js/script.js?v=20261026_04"></script>
+    <!-- Practical 11: Student Management CRUD Controller -->
+    <script src="../js/admin_crud.js?v=20261026_04"></script>
+    <!-- Practical 12 & 13: Campus Event Moderation & Fetch API CRUD Controller -->
+    <script src="../js/admin_event_crud.js?v=20261026_04"></script>
+    <!-- Practical 14: Aggregated Dashboard, RBAC Analytics & Audit Ledger Controller -->
+    <script src="../js/admin_dashboard.js?v=20261026_04"></script>
+</body>
+</html>

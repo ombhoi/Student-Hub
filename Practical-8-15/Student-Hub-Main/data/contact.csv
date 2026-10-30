@@ -1,0 +1,3 @@
+id,inquiry_id,name,email,subject,message,submitted_at,status
+1,INQ-1001,"John Doe",john.doe@charusat.edu.in,"Library Access Inquiry","Could you please provide information on library weekend timings?","2026-10-04 18:59:17",New
+2,INQ-1002,abc,abc123@gmail.com,"GYM Access Inquiry","Could you please provide information on GYM timings?","2026-10-04 19:14:32",New

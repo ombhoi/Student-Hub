@@ -1,0 +1,67 @@
+<mxfile host="65bd71144e">
+    <diagram name="Page-1" id="HcOrKNcXSFxs_42fpvW9">
+        <mxGraphModel dx="933" dy="932" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="frame" value="StudentHub - Account Login&amp;nbsp;" style="swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=1;childLayout=0;collapsible=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="760" height="980" as="geometry"/>
+                </mxCell>
+                <mxCell id="header" value="&lt;HEADER&gt; / &lt;NAV&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;" parent="frame" vertex="1">
+                    <mxGeometry x="20" y="40" width="720" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="logo" value="[ Logo ] StudentHub" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" parent="frame" vertex="1">
+                    <mxGeometry x="35" y="52" width="160" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="nav_links" value="Home | Events | About | FAQ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;" parent="frame" vertex="1">
+                    <mxGeometry x="240" y="55" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="auth_btns" value="New User? [ Register ]" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;" parent="frame" vertex="1">
+                    <mxGeometry x="530" y="55" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="main_tag" value="&lt;MAIN&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontColor=#b85450;fontStyle=1;" parent="frame" vertex="1">
+                    <mxGeometry x="20" y="110" width="720" height="740" as="geometry"/>
+                </mxCell>
+                <mxCell id="login_card" value="&lt;SECTION: Login Form Card&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;strokeWidth=2;verticalAlign=top;align=center;fontStyle=1;fontColor=#5b3a6e;" parent="frame" vertex="1">
+                    <mxGeometry x="140" y="180" width="480" height="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="form_title" value="Welcome Back to StudentHub" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" parent="frame" vertex="1">
+                    <mxGeometry x="170" y="210" width="420" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="form_sub" value="Please enter your login credentials to access your portal." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#666666;" parent="frame" vertex="1">
+                    <mxGeometry x="170" y="240" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="form_tag" value="&lt;FORM&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontColor=#b85450;fontStyle=1;" parent="frame" vertex="1">
+                    <mxGeometry x="165" y="275" width="430" height="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_email" value="&lt;LABEL&gt; Email ID *" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=11;" parent="frame" vertex="1">
+                    <mxGeometry x="185" y="300" width="390" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="input_email" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=left;spacingLeft=10;fontColor=#999999;" parent="frame" vertex="1">
+                    <mxGeometry x="185" y="320" width="390" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_pass" value="&lt;LABEL&gt; Password *" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=11;" parent="frame" vertex="1">
+                    <mxGeometry x="185" y="375" width="390" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="input_pass" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=left;spacingLeft=10;fontColor=#999999;" parent="frame" vertex="1">
+                    <mxGeometry x="185" y="395" width="390" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="chk_remember" value="[ X ] Remember me" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;" parent="frame" vertex="1">
+                    <mxGeometry x="185" y="445" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="forgot_pass" value="Forgot password?" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#0066cc;" parent="frame" vertex="1">
+                    <mxGeometry x="395" y="445" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="btn_submit" value="&lt;BUTTON&gt; Login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=14;" parent="frame" vertex="1">
+                    <mxGeometry x="185" y="490" width="390" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="no_account" value="Don&#39;t have an account? Register here" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#0066cc;" parent="frame" vertex="1">
+                    <mxGeometry x="185" y="555" width="390" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="footer" value="&lt;FOOTER&gt;&#xa;© 2026 StudentHub Portal | Privacy Policy | Terms of Service | Contact Support" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;align=center;" parent="frame" vertex="1">
+                    <mxGeometry x="20" y="910" width="720" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

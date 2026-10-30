@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Administrative Control Console</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/admin.css">
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION (Squircle Navbar) -->
+    <header class="navbar admin-navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Admin" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">Administrative Console</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../page/student-dashboard.html" class="nav-link">System Portal</a></li>
+                    <li><a href="../index.html" class="nav-link">Live Site Preview</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <span class="nav-divider"></span>
+                <div class="user-info">
+                    <span class="user-avatar-badge">A</span>
+                    <span class="user-name">Admin User</span>
+                </div>
+                <a href="../page/login.html" class="logout-link" title="Logout">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="dashboard-wrapper">
+        <div class="admin-layout">
+
+            <!-- LEFT SIDEBAR / ADMIN NAVIGATION -->
+            <aside class="admin-sidebar">
+                <div class="admin-profile-box">
+                    <div class="profile-badge-avatar">A</div>
+                    <div class="admin-profile-info">
+                        <h3>Admin Portal</h3>
+                        <p>Institutional Access</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm btn-full btn-report">
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; margin-right: 0.35rem;">description</span>
+                        Generate Report
+                    </button>
+                </div>
+
+                <nav class="sidebar-nav admin-nav">
+                    <ul>
+                        <li><a href="#" class="active"><span class="material-symbols-outlined">grid_view</span> Dashboard</a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">group</span> Manage Students</a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">event_available</span> Event Moderation</a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">campaign</span> Announcements</a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">reviews</span> Feedback &amp; Reports</a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">settings</span> System Settings</a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">security</span> Security Logs</a></li>
+                    </ul>
+                </nav>
+
+                <div class="admin-sidebar-footer">
+                    <ul>
+                        <li><a href="../page/contact.html"><span class="material-symbols-outlined">help</span> Support</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN ADMIN PANEL CONTENT -->
+            <section class="admin-main-content">
+                
+                <!-- ADMIN HERO / BANNER -->
+                <div class="admin-hero">
+                    <h1>Administrator Control Center</h1>
+                    <p>Manage student registrations, event approvals, and system-wide configurations.</p>
+                </div>
+
+                <!-- STATS CARDS -->
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-card stat-green">
+                        <div class="stat-icon-wrapper">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-title">Total Students</span>
+                            <span class="stat-value">14,205</span>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card stat-yellow">
+                        <div class="stat-icon-wrapper">
+                            <span class="material-symbols-outlined">event_upcoming</span>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-title">Pending Events</span>
+                            <span class="stat-value">42</span>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card stat-pink">
+                        <div class="stat-icon-wrapper">
+                            <span class="material-symbols-outlined">flag</span>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-title">Flagged Items</span>
+                            <span class="stat-value">18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUICK ACTION BUTTONS -->
+                <div class="admin-quick-actions">
+                    <span class="quick-actions-title">QUICK ACTIONS</span>
+                    <div class="quick-actions-grid">
+                        <a href="#" class="btn btn-primary action-btn"><span class="material-symbols-outlined">add</span> Create Event</a>
+                        <a href="#" class="btn btn-outline action-btn"><span class="material-symbols-outlined">person_add</span> Add Student</a>
+                        <a href="#" class="btn btn-outline action-btn"><span class="material-symbols-outlined">record_voice_over</span> Broadcast Alert</a>
+                        <a href="#" class="btn btn-outline action-btn"><span class="material-symbols-outlined">download</span> Export Data</a>
+                    </div>
+                </div>
+
+                <!-- RECENT REQUESTS LIST (TABLE REPLACEMENT) -->
+                <div class="admin-requests-section">
+                    <div class="requests-header">
+                        <h2>Recent Requests</h2>
+                        <a href="#" class="view-all-link">View All</a>
+                    </div>
+
+                    <div class="requests-list">
+                        <!-- HEADER ROW -->
+                        <div class="request-list-header">
+                            <div class="col-id-date">ID / Date</div>
+                            <div class="col-title-user">Request Title / User</div>
+                            <div class="col-category">Category</div>
+                            <div class="col-actions">Actions</div>
+                        </div>
+
+                        <!-- REQUEST ROW 1 -->
+                        <div class="request-row">
+                            <div class="col-id-date">
+                                <span class="req-id">#REQ-8901</span>
+                                <span class="req-date">Oct 24, 2024</span>
+                            </div>
+                            <div class="col-title-user">
+                                <span class="req-title">Late Course Registration</span>
+                                <span class="req-user">Marcus Vance</span>
+                            </div>
+                            <div class="col-category">
+                                <span class="category-pill pill-student">Student</span>
+                            </div>
+                            <div class="col-actions">
+                                <button class="action-icon-btn" aria-label="Edit Request"><span class="material-symbols-outlined">edit</span></button>
+                            </div>
+                        </div>
+
+                        <!-- REQUEST ROW 2 -->
+                        <div class="request-row">
+                            <div class="col-id-date">
+                                <span class="req-id">#REQ-8902</span>
+                                <span class="req-date">Oct 24, 2024</span>
+                            </div>
+                            <div class="col-title-user">
+                                <span class="req-title">Annual Robotics Hackathon</span>
+                                <span class="req-user">Elena Rostova</span>
+                            </div>
+                            <div class="col-category">
+                                <span class="category-pill pill-event">Event</span>
+                            </div>
+                            <div class="col-actions">
+                                <button class="action-icon-btn" aria-label="Edit Request"><span class="material-symbols-outlined">edit</span></button>
+                            </div>
+                        </div>
+
+                        <!-- REQUEST ROW 3 -->
+                        <div class="request-row">
+                            <div class="col-id-date">
+                                <span class="req-id">#REQ-8903</span>
+                                <span class="req-date">Oct 23, 2024</span>
+                            </div>
+                            <div class="col-title-user">
+                                <span class="req-title">Lab Equipment Grant Access</span>
+                                <span class="req-user">Devon Price</span>
+                            </div>
+                            <div class="col-category">
+                                <span class="category-pill pill-system">System</span>
+                            </div>
+                            <div class="col-actions">
+                                <button class="action-icon-btn" aria-label="Edit Request"><span class="material-symbols-outlined">edit</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- University Footer (matching index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-title">
+                        <div class="brand-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <span>StudentHub</span>
+                    </div>
+                    <p class="footer-brand-desc">The centralized administrative and academic portal for university scholars, staff governance, course registrations, and daily campus milestones.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>Main Quadrangle, Academic Hall East</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Admin Console</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../page/student-dashboard.html">System Portal</a></li>
+                        <li><a href="../index.html">Live Site Preview</a></li>
+                        <li><a href="#">Security Audit Logs</a></li>
+                        <li><a href="#">Database Diagnostics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Operations</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../page/FAQ.html">Help Center &amp; FAQ</a></li>
+                        <li><a href="../page/feed-back.html">Submit Feedback</a></li>
+                        <li><a href="../page/contact.html">IT Service Desk</a></li>
+                        <li><a href="#">Emergency Broadcast</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Campus Portal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../index.html">Campus Home</a></li>
+                        <li><a href="../page/events.html">Campus Events</a></li>
+                        <li><a href="../page/about-us.html">About Portal</a></li>
+                        <li><a href="../page/login.html">Portal Login</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 StudentHub University Academic Portal. Administrative Console.</p>
+                <div class="footer-legal-links">
+                    <a href="../page/about-us.html">Privacy Policy</a>
+                    <a href="../page/about-us.html">Terms of Service</a>
+                    <a href="../page/about-us.html">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Application Script for Dark Theme and Interactivity -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

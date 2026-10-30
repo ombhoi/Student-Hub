@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="SPb_iY80u0DVvWxiFEXa">
+    <mxGraphModel dx="1030" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="frame" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=1;childLayout=0;collapsible=0;fontStyle=1;fontSize=14;" value="StudentHub - Campus Events" vertex="1">
+          <mxGeometry height="980" width="760" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;" value="&lt;HEADER&gt; / &lt;NAV&gt;" vertex="1">
+          <mxGeometry height="60" width="720" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="logo" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="[ Logo ] StudentHub" vertex="1">
+          <mxGeometry height="36" width="160" x="35" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_links" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;" value="Home | Events (Active) | Dashboard | Profile | FAQ" vertex="1">
+          <mxGeometry height="30" width="340" x="210" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="auth_btns" parent="frame" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;" value="[ Login ]  [ Register ]" vertex="1">
+          <mxGeometry height="30" width="160" x="560" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="main_tag" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontColor=#b85450;fontStyle=1;" value="&lt;MAIN&gt;" vertex="1">
+          <mxGeometry height="740" width="720" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="filter_sec" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontColor=#5b3a6e;" value="&lt;SECTION: Event Search &amp; Filter Bar&gt;" vertex="1">
+          <mxGeometry height="100" width="690" x="35" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="search_input" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;align=left;spacingLeft=10;fontColor=#888888;" value="" vertex="1">
+          <mxGeometry height="40" width="300" x="55" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="filter_dropdown" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;" value="[ SELECT: Category (All / Tech / Sports / Cultural) ]" vertex="1">
+          <mxGeometry height="40" width="240" x="370" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_search" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="[ Search ]" vertex="1">
+          <mxGeometry height="40" width="80" x="625" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="events_sec" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" value="&lt;SECTION: Upcoming Events Listing&gt;" vertex="1">
+          <mxGeometry height="585" width="690" x="35" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="event1" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=center;verticalAlign=top;spacingTop=10;" value="&lt;br&gt;&lt;br&gt;[ Image]&lt;br&gt;&lt;div&gt;[Event Detail]&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="205" x="55" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_event1" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;BUTTON&gt; Register Now" vertex="1">
+          <mxGeometry height="35" width="165" x="75" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="event2" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=center;verticalAlign=top;spacingTop=10;" value="&lt;br&gt;&lt;br&gt;[ Image]&lt;div&gt;[Event Detail]&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="205" x="277" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_event2" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;BUTTON&gt; Register Now" vertex="1">
+          <mxGeometry height="35" width="165" x="297" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="event3" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=center;verticalAlign=top;spacingTop=10;" value="&lt;br&gt;&lt;br&gt;[ Image]&lt;br&gt;[Event Detail]&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="205" x="500" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_event3" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;BUTTON&gt; Register Now" vertex="1">
+          <mxGeometry height="35" width="165" x="520" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="event4" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=center;verticalAlign=top;spacingTop=10;" value="&lt;br&gt;&lt;br&gt;[ Image ]&lt;br&gt;&lt;br&gt;[Event Detail]&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="205" x="55" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_event4" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;BUTTON&gt; Register Now" vertex="1">
+          <mxGeometry height="35" width="165" x="75" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="event5" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=center;verticalAlign=top;spacingTop=10;" value="&lt;br&gt;&lt;br&gt;[ Image ]&lt;br&gt;[Event Detail]&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="205" x="277" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_event5" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;BUTTON&gt; Register Now" vertex="1">
+          <mxGeometry height="35" width="165" x="297" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="event6" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;align=center;verticalAlign=top;spacingTop=10;" value="&lt;br&gt;&lt;br&gt;[ Image ]&lt;br&gt;[Event Detail]&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="205" x="500" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_event6" parent="frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;BUTTON&gt; Register Now" vertex="1">
+          <mxGeometry height="35" width="165" x="520" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" parent="frame" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontColor=#333333;align=center;" value="&lt;FOOTER&gt;&#xa;© 2026 StudentHub Portal | Privacy Policy | Terms of Service | Contact Support" vertex="1">
+          <mxGeometry height="60" width="720" x="20" y="860" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

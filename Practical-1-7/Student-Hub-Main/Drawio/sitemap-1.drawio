@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="OKhlxLhe1f-BnpqHkkCw">
+    <mxGraphModel dx="2575" dy="1405" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="portal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006eaf;fontStyle=1;fontSize=16;" value="🎓 StudentHub Portal" vertex="1">
+          <mxGeometry height="45" width="200" x="900" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="home" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="Home (index.html)" vertex="1">
+          <mxGeometry height="45" width="200" x="900" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="sec_auth" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=13;startSize=25;rounded=1;" value="Authentication" vertex="1">
+          <mxGeometry height="420" width="400" x="80" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="login" parent="sec_auth" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontStyle=1;" value="Login" vertex="1">
+          <mxGeometry height="40" width="160" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="credentials" parent="sec_auth" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=10;" value="• Email&#xa;• Password&#xa;• Login button" vertex="1">
+          <mxGeometry height="80" width="160" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="register" parent="sec_auth" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontStyle=1;" value="Register" vertex="1">
+          <mxGeometry height="40" width="160" x="220" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="registration" parent="sec_auth" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=10;" value="• Full name&#xa;• Email&#xa;• Password&#xa;• Confirm password&#xa;• Register button" vertex="1">
+          <mxGeometry height="100" width="160" x="220" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ac1" edge="1" parent="sec_auth" source="login" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="credentials">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ac2" edge="1" parent="sec_auth" source="register" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="registration">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sec_dash" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;startSize=25;rounded=1;" value="Student Dashboard" vertex="1">
+          <mxGeometry height="420" width="700" x="510" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="profile" parent="sec_dash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontStyle=1;" value="Profile" vertex="1">
+          <mxGeometry height="40" width="150" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profileDetails" parent="sec_dash" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=10;" value="• View profile&#xa;• Enrollment no.&#xa;• Department&#xa;• Semester&#xa;• Email" vertex="1">
+          <mxGeometry height="100" width="150" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="courses" parent="sec_dash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontStyle=1;" value="Courses" vertex="1">
+          <mxGeometry height="40" width="150" x="190" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="courseDetails" parent="sec_dash" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=10;" value="• Web Dev&#xa;• Database Fund.&#xa;• Communication" vertex="1">
+          <mxGeometry height="80" width="150" x="190" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="announcements" parent="sec_dash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontStyle=1;" value="Announcements" vertex="1">
+          <mxGeometry height="40" width="150" x="360" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="annDetails" parent="sec_dash" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=10;" value="• Campus Notices&#xa;• Exam Schedules&#xa;• Deadlines" vertex="1">
+          <mxGeometry height="80" width="150" x="360" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="events" parent="sec_dash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontStyle=1;" value="Events" vertex="1">
+          <mxGeometry height="40" width="150" x="530" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eventDetails" parent="sec_dash" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=10;" value="• Orientation&#xa;• Study Workshop&#xa;• Career Guidance" vertex="1">
+          <mxGeometry height="80" width="150" x="530" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dc1" edge="1" parent="sec_dash" source="profile" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="profileDetails">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dc2" edge="1" parent="sec_dash" source="courses" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="courseDetails">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dc3" edge="1" parent="sec_dash" source="announcements" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="annDetails">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dc4" edge="1" parent="sec_dash" source="events" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="eventDetails">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sec_supp" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=13;startSize=25;rounded=1;" value="Information &amp; Support" vertex="1">
+          <mxGeometry height="420" width="680" x="1240" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="about" parent="sec_supp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontStyle=1;" value="About" vertex="1">
+          <mxGeometry height="40" width="110" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="contact" parent="sec_supp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontStyle=1;" value="Contact" vertex="1">
+          <mxGeometry height="40" width="110" x="150" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="contactDetails" parent="sec_supp" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=5;" value="• Email &amp; Phone&#xa;• Address&#xa;• Contact form" vertex="1">
+          <mxGeometry height="80" width="110" x="150" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="faq" parent="sec_supp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontStyle=1;" value="FAQ" vertex="1">
+          <mxGeometry height="40" width="110" x="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="feedback" parent="sec_supp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontStyle=1;" value="Feedback" vertex="1">
+          <mxGeometry height="40" width="120" x="410" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="feedbackDetails" parent="sec_supp" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=5;" value="• Name &amp; Email&#xa;• Comments&#xa;• Submit action" vertex="1">
+          <mxGeometry height="80" width="120" x="410" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="sec_supp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontStyle=1;" value="Admin" vertex="1">
+          <mxGeometry height="40" width="110" x="550" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="adminDetails" parent="sec_supp" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffffff;strokeColor=#cccccc;spacingLeft=5;" value="• Students list&#xa;• Events info&#xa;• Feedback msgs" vertex="1">
+          <mxGeometry height="80" width="110" x="550" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="sc1" edge="1" parent="sec_supp" source="contact" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="contactDetails">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sc2" edge="1" parent="sec_supp" source="feedback" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="feedbackDetails">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sc3" edge="1" parent="sec_supp" source="admin" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;strokeColor=#cccccc;" target="adminDetails">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr1" edge="1" parent="1" source="portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeWidth=2;strokeColor=#006eaf;" target="home">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_auth" edge="1" parent="1" source="home" style="edgeStyle=elbowEdgeStyle;elbow=vertical;rounded=0;html=1;endArrow=classic;strokeWidth=2;strokeColor=#d6b656;" target="sec_auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_dash" edge="1" parent="1" source="home" style="edgeStyle=elbowEdgeStyle;elbow=vertical;rounded=0;html=1;endArrow=classic;strokeWidth=2;strokeColor=#82b366;" target="sec_dash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_supp" edge="1" parent="1" source="home" style="edgeStyle=elbowEdgeStyle;elbow=vertical;rounded=0;html=1;endArrow=classic;strokeWidth=2;strokeColor=#9673a6;" target="sec_supp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

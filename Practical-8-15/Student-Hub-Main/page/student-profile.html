@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Student Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="../css/profile.css">
+    <style id="auth-strict-guard">html, body { display: none !important; }</style>
+    <script>
+        document.documentElement.style.visibility = 'hidden';
+    </script>
+    <script src="../js/auth_guard.js?v=5.0"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="brand-link">
+                <img src="../image/studenthub-logo.webp" alt="StudentHub Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">StudentHub</span>
+                    <span class="brand-subtitle">University Portal</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="about-us.html" class="nav-link">About</a></li>
+                    <li><a href="FAQ.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge"></span>
+                </button>
+                <span class="nav-divider"></span>
+                <a href="student-profile.html" class="user-info active-profile" title="View Student Profile">
+                    <span class="user-avatar-badge">ST</span>
+                    <span class="user-name">Student</span>
+                </a>
+                <a href="../php/logout.php" class="logout-link" title="Logout">
+                    <span class="material-symbols-outlined">logout</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="profile-layout">
+
+        <!-- Left Sidebar / Profile Card & Menu -->
+        <aside class="profile-sidebar">
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <div class="profile-avatar-large">AJ</div>
+                </div>
+                <button type="button" class="btn-upload-photo">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                    <span>Upload New Photo</span>
+                </button>
+                <h3>Alex Johnson</h3>
+                <p class="profile-subtitle">B.Tech Computer Science & Engineering</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="student-profile.html" class="active">
+                            <span class="material-symbols-outlined">person</span>
+                            <span>Personal Details</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="student-dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <span>Student Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="events.html">
+                            <span class="material-symbols-outlined">event</span>
+                            <span>Enrolled Events</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">security</span>
+                            <span>Security & Password</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Right Main Panel / Personal Information Form -->
+        <section class="profile-panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span class="material-symbols-outlined title-icon">manage_accounts</span>
+                    <h2>Personal Information</h2>
+                </div>
+                <p class="panel-subtitle">Update your basic profile details and how others identify you across the campus portal.</p>
+            </div>
+
+            <form action="#" method="POST" class="profile-form">
+                <div class="form-grid">
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="fullname">Full Name *</label>
+                        <input type="text" id="fullname" name="fullname" value="Alex Johnson" required>
+                    </div>
+
+                    <!-- Student Email -->
+                    <div class="form-group">
+                        <label for="email">Student Email *</label>
+                        <input type="email" id="email" name="email" value="alex.ce23@charusat.edu.in" required>
+                    </div>
+
+                    <!-- Enrollment / Roll Number -->
+                    <div class="form-group">
+                        <label for="rollnumber">Enrollment / Roll Number</label>
+                        <input type="text" id="rollnumber" name="rollnumber" value="22CE042" readonly class="input-disabled">
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" value="+91 98765 43210">
+                    </div>
+
+                    <!-- Department -->
+                    <div class="form-group full-width">
+                        <label for="department">Department</label>
+                        <div class="select-wrapper">
+                            <select id="department" name="department">
+                                <option value="Computer Engineering">Computer Engineering</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="AI & Data Science">AI &amp; Data Science</option>
+                                <option value="Electronics & Communication">Electronics &amp; Communication</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                            </select>
+                            <span class="material-symbols-outlined select-arrow">expand_more</span>
+                        </div>
+                    </div>
+
+                    <!-- Short Bio -->
+                    <div class="form-group full-width">
+                        <div class="label-row">
+                            <label for="bio">Short Bio</label>
+                            <span class="char-count">Max 250 characters</span>
+                        </div>
+                        <textarea id="bio" name="bio" rows="4">Focusing on full-stack web applications, machine learning architectures, and campus student community initiatives. Passionate about hackathons and collaborative research.</textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-outline">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="material-symbols-outlined">save</span>
+                        <span>Save Changes</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <span class="footer-brand">StudentHub</span>
+                    <p class="footer-brand-desc">The central campus hub for student events, departmental notices, academic schedules, and peer engagement.</p>
+                    <div class="footer-location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>CHARUSAT Campus, Changa - 388421</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="events.html">Campus Events</a></li>
+                        <li><a href="about-us.html">About Portal</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Student Portal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="student-dashboard.html">Dashboard</a></li>
+                        <li><a href="student-profile.html">Student Profile</a></li>
+                        <li><a href="feed-back.html">Feedback Form</a></li>
+                        <li><a href="login.html">Student Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support & Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="contact.html">Help Desk</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Campus Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 StudentHub. All academic rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Populate profile form from authenticated user session
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('../php/auth_status.php');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.authenticated && data.user) {
+                        const u = data.user;
+                        const fullNameEl = document.getElementById('fullname');
+                        const emailEl = document.getElementById('email');
+                        const rollEl = document.getElementById('rollnumber');
+                        const phoneEl = document.getElementById('phone');
+                        const bioEl = document.getElementById('bio');
+                        const deptEl = document.getElementById('department');
+                        const avatarLarge = document.querySelector('.profile-avatar-large');
+                        const subtitleEl = document.querySelector('.profile-subtitle');
+                        const h3El = document.querySelector('.profile-card h3');
+
+                        if (fullNameEl) fullNameEl.value = u.name || '';
+                        if (h3El) h3El.textContent = u.name || '';
+                        if (emailEl) emailEl.value = u.email || '';
+                        if (rollEl) rollEl.value = u.student_code + ' (' + (u.roll_number || 'Enrolled') + ')';
+                        if (phoneEl && u.phone) phoneEl.value = u.phone;
+                        if (bioEl && u.bio) bioEl.value = u.bio;
+                        if (deptEl && u.department) deptEl.value = u.department;
+                        if (avatarLarge) avatarLarge.textContent = u.initials || 'ST';
+                        if (subtitleEl) subtitleEl.textContent = u.department || 'Enrolled Student';
+                    }
+                }
+            } catch (e) {
+                console.warn('Profile population error:', e);
+            }
+        });
+    </script>
+</body>
+
+</html>

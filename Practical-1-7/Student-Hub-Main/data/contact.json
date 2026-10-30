@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "inquiry_id": "INQ-1001",
+        "name": "John Doe",
+        "email": "john.doe@charusat.edu.in",
+        "subject": "Library Access Inquiry",
+        "message": "Could you please provide information on library weekend timings?",
+        "submitted_at": "2026-10-04 18:59:17",
+        "status": "New"
+    },
+    {
+        "id": 2,
+        "inquiry_id": "INQ-1002",
+        "name": "abc",
+        "email": "abc123@gmail.com",
+        "subject": "GYM Access Inquiry",
+        "message": "Could you please provide information on GYM timings?",
+        "submitted_at": "2026-10-04 19:14:32",
+        "status": "New"
+    }
+]
